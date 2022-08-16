@@ -10,24 +10,48 @@ $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $police-logo_titles: 'Shrikhand', 'cursive';
 $police-txt: 'Roboto', 'sans-serif';
-body{
-  &>header{}
-  &>nav{}
-  &>main{
-    &>section{}
-    &>article{}
-  }
-  &>footer{
-    &>ul{}
-  }
-}
-}
 
+
+
+
+
+body{font-family: 'Raleway', sans-serif;
+  &>header{display:flex; justify-content: center; margin: 1.6rem 0 1rem 0;}
+
+  // &>nav{}
+  &>main{
+    &>section.location{display:flex; flex-direction: row; align-items: center; background-color: rgb(228, 228, 228); border-top: 1px solid #ddd;  box-shadow: 0 2px 5px #999 inset;
+      &>div.location-dot{position: relative;
+        &>i{position: absolute; text-align: center; margin: 50% 10px;}
+      }
+      &>div.location-txt{display:flex; justify-content: center; width: 100%;
+        &>p{font-size: 1.1em; font-weight: bold;}
+      }
+    }
+    &>section.description{display:flex; flex-direction: column; align-items: center; text-align: center; background-color: rgb(238, 238, 238);
+      &>h1{margin: 50px 50px 10px 50px; font-size: 1.8em;}
+      &>p{margin: 10px 30px 20px 30px; font-size: 1.3em;}
+      &>a.btn-1{background-color: $color-primary; color: #fff; text-decoration: none; margin-bottom: 80px; padding: 15px 25px; border-radius: 70px;}
+    }
+  }
+  &>footer{background-color: rgb(53, 53, 53); color: #fff; padding: 30px 0 40px;
+    &>h4{font-family: $police-logo_titles; font-size: 1.3rem; margin: 0; padding-left: 30px;}
+    &>div{margin: 30px; padding: 0;
+      &>ul{margin: 0; padding: 0;
+        &>li{list-style-type: none; margin: 10px 0;
+          &>a{text-decoration: none; color: #fff;
+            &>i{color: #fff; margin-right: 10px;}
+          }
+        }
+      }
+    }
+  }
+}
 
 
 @media all and (max-width:$mobile){
-  body{
-    &>header{}
+  body{font-family: 'Raleway', sans-serif;
+    &>header{display:flex; justify-content: center;}
     &>nav{}
     &>main{
       &>section{}
@@ -51,7 +75,8 @@ body{
     }
   }
 }
-@media all and (min-width:$desktop) and (max-width:$tv){
+// @media all and (min-width:$desktop) and (max-width:$tv){
+@media all and (min-width:$desktop){
   body{
     &>header{}
     &>nav{}
@@ -64,16 +89,16 @@ body{
     }
   }
 }
-@media all and (min-width:$tv){
-  body{
-    &>header{}
-    &>nav{}
-    &>main{
-      &>section{}
-      &>article{}
-    }
-    &>footer{
-      &>ul{}
-    }
-  }
-}
+// @media all and (min-width:$tv){
+//   body{
+//     &>header{}
+//     &>nav{}
+//     &>main{
+//       &>section{}
+//       &>article{}
+//     }
+//     &>footer{
+//       &>ul{}
+//     }
+//   }
+// }
