@@ -8,6 +8,7 @@
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+$grey-color:rgb(240, 240, 240);
 $police-logo_titles: 'Shrikhand', 'cursive';
 $police-txt: 'Roboto', 'sans-serif';
 
@@ -15,32 +16,253 @@ $police-txt: 'Roboto', 'sans-serif';
 
 
 
-body{font-family: 'Raleway', sans-serif;
-  &>header{display:flex; justify-content: center; margin: 1.6rem 0 1rem 0;}
+body {
+  font-family: 'Raleway', sans-serif;
 
-  // &>nav{}
-  &>main{
-    &>section.location{display:flex; flex-direction: row; align-items: center; background-color: rgb(228, 228, 228); border-top: 1px solid #ddd;  box-shadow: 0 2px 5px #999 inset;
-      &>div.location-dot{position: relative;
-        &>i{position: absolute; text-align: center; margin: 50% 10px;}
-      }
-      &>div.location-txt{display:flex; justify-content: center; width: 100%;
-        &>p{font-size: 1.1em; font-weight: bold;}
+  >header {
+    display: flex;
+    justify-content: center;
+    margin: 1.6rem 0 1rem 0;
+  }
+
+  // >nav{}
+  >main {
+    >section.location {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: rgb(228, 228, 228);
+      border-top: 1px solid #ddd;
+      box-shadow: 0 2px 5px #999 inset;
+
+      // >div.location-dot {
+      //   position: relative;
+
+      //   >i {
+      //     position: absolute;
+      //     text-align: center;
+      //     margin: 50% 10px;
+      //   }
+      // }
+
+      >div.location-txt {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+
+        >p {
+          font-size: 1.1em;
+          font-weight: bold;
+        }
       }
     }
-    &>section.description{display:flex; flex-direction: column; align-items: center; text-align: center; background-color: rgb(238, 238, 238);
-      &>h1{margin: 50px 50px 10px 50px; font-size: 1.8em;}
-      &>p{margin: 10px 30px 20px 30px; font-size: 1.3em;}
-      &>a.btn-1{background-color: $color-primary; color: #fff; text-decoration: none; margin-bottom: 80px; padding: 15px 25px; border-radius: 70px;}
+
+    >section.description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: $grey-color;
+
+      >h1 {
+        margin: 50px 50px 10px 50px;
+        font-size: 1.8em;
+      }
+
+      >p {
+        margin: 10px 30px 20px 30px;
+        font-size: 1.3em;
+      }
+
+      >a.btn-1 {
+        background-color: $color-primary;
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 80px;
+        padding: 15px 25px;
+        border-radius: 70px;
+      }
+    }
+
+    >section.stages {
+      margin: auto;
+      padding: 50px 0;
+
+      >h2 {
+        width: 90%;
+        margin: 0 auto 30px;
+      }
+
+      >div.stage {
+        width: 90%;
+        margin: 0 auto;
+        padding-left: 5%;
+        // margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 25px;
+
+        >div.nb-stage{
+          position: absolute;
+
+          >p.stage-nb {
+            position: relative;
+            top: 5px;
+            right: 175px;
+            background-color: $color-primary;
+            color: #fff;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            font-size: 1em;
+            display: flex;
+            justify-content: center;
+            line-height: 1.7em;
+          }
+        }
+
+        >div.btn-stage {
+          width: 350px;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          background-color: $grey-color;
+          border-radius: 20px;
+          box-shadow: 0px 3px 10px rgb(204, 203, 203);
+
+          >i {
+            color: rgb(109, 106, 106);
+            width: 40px;
+            margin-left: 35px;
+          }
+
+          >span.stage.txt {
+            text-align: center;
+            width: 275px;
+          }
+        }
+      }
+    }
+
+    >section.restaurants {
+      background-color: $grey-color;
+      margin: auto;
+      padding: 50px 0;
+
+      >h2 {
+        width: 90%;
+        margin: 0 auto 30px;
+      }
+
+      >div.restaurants-wrapper {
+        width: 90%;
+        margin: auto;
+
+        >div.restaurant-card {
+          background-color: #fff;
+          display: flex;
+          flex-grow: 1;
+          width: 100%;
+          border-radius: 20px;
+          box-shadow: 0px 3px 10px rgb(204, 203, 203);
+          margin-bottom: 20px;
+
+          >a {
+            color: #000;
+            text-decoration: none;
+            width: 100%;
+
+            >div.img-wrapper {position: relative;
+              >div.img-restaurant {
+                position: relative;
+                overflow: hidden;
+                height: 200px;
+                border-radius: 15px 15px 0 0;
+
+                >img {
+                  width: 101%;
+                  height: 101%;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  object-fit: cover;
+                }
+              }
+
+              >div.img-content {
+                >p.new-restaurant {
+                  position: absolute;
+                  top: 0;
+                  right: 15px;
+                  background-color: $color-tertiary;
+                  font-size: 0.9em;
+                  padding: 5px 10px;
+                  border-radius: 3px;
+                }
+              }
+            }
+
+            >div.restaurant-body {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              margin: 10px;
+
+              >div.restaurant-txt {
+                >h3{margin: 5px 0;}
+                >p{margin: 5px 0;}
+              }
+
+              >div.restaurant-icon {
+                display: flex;
+                align-items: center;
+                margin-right: 20px;
+                padding-bottom: 10px;
+                font-size: 1.5em;
+              }
+
+            }
+          }
+        }
+      }
     }
   }
-  &>footer{background-color: rgb(53, 53, 53); color: #fff; padding: 30px 0 40px;
-    &>h4{font-family: $police-logo_titles; font-size: 1.3rem; margin: 0; padding-left: 30px;}
-    &>div{margin: 30px; padding: 0;
-      &>ul{margin: 0; padding: 0;
-        &>li{list-style-type: none; margin: 10px 0;
-          &>a{text-decoration: none; color: #fff;
-            &>i{color: #fff; margin-right: 10px;}
+
+  >footer {
+    background-color: rgb(53, 53, 53);
+    color: #fff;
+    padding: 30px 0 40px;
+
+    >h4 {
+      font-family: $police-logo_titles;
+      font-size: 1.3rem;
+      margin: 0;
+      padding-left: 30px;
+    }
+
+    >div {
+      margin: 30px;
+      padding: 0;
+
+      >ul {
+        margin: 0;
+        padding: 0;
+
+        >li {
+          list-style-type: none;
+          margin: 10px 0;
+
+          >a {
+            text-decoration: none;
+            color: #fff;
+
+            >i.fa-solid {
+              color: #fff;
+              width: 30px;
+            }
           }
         }
       }
@@ -49,56 +271,76 @@ body{font-family: 'Raleway', sans-serif;
 }
 
 
-@media all and (max-width:$mobile){
-  body{font-family: 'Raleway', sans-serif;
-    &>header{display:flex; justify-content: center;}
-    &>nav{}
-    &>main{
-      &>section{}
-      &>article{}
+@media all and (max-width:$mobile) {
+  body {
+    font-family: 'Raleway', sans-serif;
+
+    >header {
+      display: flex;
+      justify-content: center;
     }
-    &>footer{
-      &>ul{}
+
+    >nav {}
+
+    >main {
+      >section {}
+
+      >article {}
     }
-  }
-}
-@media all and (min-width:$mobile) and (max-width:$tablette){
-  body{
-    &>header{}
-    &>nav{}
-    &>main{
-      &>section{}
-      &>article{}
-    }
-    &>footer{
-      &>ul{}
+
+    >footer {
+      >ul {}
     }
   }
 }
+
+@media all and (min-width:$mobile) and (max-width:$tablette) {
+  body {
+    >header {}
+
+    >nav {}
+
+    >main {
+      >section {}
+
+      >article {}
+    }
+
+    >footer {
+      >ul {}
+    }
+  }
+}
+
 // @media all and (min-width:$desktop) and (max-width:$tv){
-@media all and (min-width:$desktop){
-  body{
-    &>header{}
-    &>nav{}
-    &>main{
-      &>section{}
-      &>article{}
+@media all and (min-width:$desktop) {
+  body {
+    >header {}
+
+    >nav {}
+
+    >main {
+      >section {}
+
+      >article {}
     }
-    &>footer{
-      &>ul{}
+
+    >footer {
+      >ul {}
     }
   }
 }
+
 // @media all and (min-width:$tv){
 //   body{
-//     &>header{}
-//     &>nav{}
-//     &>main{
-//       &>section{}
-//       &>article{}
+//     >header{}
+//     >nav{}
+//     >main{
+//       >section{}
+//       >article{}
 //     }
-//     &>footer{
-//       &>ul{}
+//     >footer{
+//       >ul{}
 //     }
 //   }
 // }

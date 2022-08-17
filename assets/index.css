@@ -341,18 +341,11 @@ body > main > section.location {
   border-top: 1px solid #ddd;
   box-shadow: 0 2px 5px #999 inset;
 }
-body > main > section.location > div.location-dot {
-  position: relative;
-}
-body > main > section.location > div.location-dot > i {
-  position: absolute;
-  text-align: center;
-  margin: 50% 10px;
-}
 body > main > section.location > div.location-txt {
   display: flex;
   justify-content: center;
   width: 100%;
+  position: relative;
 }
 body > main > section.location > div.location-txt > p {
   font-size: 1.1em;
@@ -363,7 +356,7 @@ body > main > section.description {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(240, 240, 240);
 }
 body > main > section.description > h1 {
   margin: 50px 50px 10px 50px;
@@ -380,6 +373,131 @@ body > main > section.description > a.btn-1 {
   margin-bottom: 80px;
   padding: 15px 25px;
   border-radius: 70px;
+}
+body > main > section.stages {
+  margin: auto;
+  padding: 50px 0;
+}
+body > main > section.stages > h2 {
+  width: 90%;
+  margin: 0 auto 30px;
+}
+body > main > section.stages > div.stage {
+  width: 90%;
+  margin: 0 auto;
+  padding-left: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+body > main > section.stages > div.stage > div.nb-stage {
+  position: absolute;
+}
+body > main > section.stages > div.stage > div.nb-stage > p.stage-nb {
+  position: relative;
+  top: 5px;
+  right: 175px;
+  background-color: #9356DC;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  line-height: 1.7em;
+}
+body > main > section.stages > div.stage > div.btn-stage {
+  width: 350px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  border-radius: 20px;
+  box-shadow: 0px 3px 10px rgb(204, 203, 203);
+}
+body > main > section.stages > div.stage > div.btn-stage > i {
+  color: rgb(109, 106, 106);
+  width: 40px;
+  margin-left: 35px;
+}
+body > main > section.stages > div.stage > div.btn-stage > span.stage.txt {
+  text-align: center;
+  width: 275px;
+}
+body > main > section.restaurants {
+  background-color: rgb(240, 240, 240);
+  margin: auto;
+  padding: 50px 0;
+}
+body > main > section.restaurants > h2 {
+  width: 90%;
+  margin: 0 auto 30px;
+}
+body > main > section.restaurants > div.restaurants-wrapper {
+  width: 90%;
+  margin: auto;
+}
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card {
+  background-color: #fff;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 3px 10px rgb(204, 203, 203);
+  margin-bottom: 20px;
+}
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a {
+  color: #000;
+  text-decoration: none;
+  width: 100%;
+}
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper {
+  position: relative;
+}
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-restaurant {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  border-radius: 15px 15px 0 0;
+}
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-restaurant > img {
+  width: 101%;
+  height: 101%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-content > p.new-restaurant {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  background-color: #99E2D0;
+  font-size: 0.9em;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > h3 {
+  margin: 5px 0;
+}
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > p {
+  margin: 5px 0;
+}
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  padding-bottom: 10px;
+  font-size: 1.5em;
 }
 body > footer {
   background-color: rgb(53, 53, 53);
@@ -408,9 +526,9 @@ body > footer > div > ul > li > a {
   text-decoration: none;
   color: #fff;
 }
-body > footer > div > ul > li > a > i {
+body > footer > div > ul > li > a > i.fa-solid {
   color: #fff;
-  margin-right: 10px;
+  width: 30px;
 }
 
 @media all and (max-width: 768px) {
