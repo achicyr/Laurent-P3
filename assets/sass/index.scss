@@ -13,8 +13,11 @@ $police-logo_titles: 'Shrikhand', 'cursive';
 $police-txt: 'Roboto', 'sans-serif';
 
 
-
-
+/***********************************/
+/***********************************/
+// PAGE MENU
+/***********************************/
+/***********************************/
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -22,7 +25,139 @@ body {
   >header {
     display: flex;
     justify-content: center;
-    margin: 1.6rem 0 1rem 0;
+    margin-top: 15px;
+
+    >h1{
+      margin: 5px 0;
+      // position: absolute;
+
+      >a{
+        // position: relative;
+        text-decoration: none;
+        color: #000;
+
+        >i{font-size: 0.9em;}
+      }
+    }
+  }
+
+  >main {
+
+    >section.banner{
+    
+      >div.banner-wrapper{
+        // width: 100%;
+        // max-height: 500px;
+        position: relative;
+        >img{
+          width: 100%;
+          height: auto;
+          position: relative;
+        }
+        
+        >div.banner-title {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 30px 0 0;
+          background-color: $grey-color;
+          border-radius: 30px 30px 0 0;
+
+          >span.title {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: auto;
+            
+            >h3{
+              font-family: $police-logo_titles;
+              font-size: 1.5em;
+              margin: 0;
+            }
+
+            >i{
+              font-size: 1.5em;
+              margin: 0;
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    >section.meals{
+      margin: auto;
+      padding: 50px 0;
+      background-color: $grey-color;
+
+      >article{
+          width: 90%;
+          margin: 0 auto 30px;
+
+          >h2{
+            text-transform: uppercase;
+          }
+      }
+    }
+
+  }
+
+  >footer {
+    background-color: rgb(53, 53, 53);
+    color: #fff;
+    padding: 30px 0 40px;
+
+    >h4 {
+      font-family: $police-logo_titles;
+      font-size: 1.3rem;
+      margin: 0;
+      padding-left: 30px;
+    }
+
+    >div {
+      margin: 30px;
+      padding: 0;
+
+      >ul {
+        margin: 0;
+        padding: 0;
+
+        >li {
+          list-style-type: none;
+          margin: 10px 0;
+
+          >a {
+            text-decoration: none;
+            color: #fff;
+
+            >i.fa-solid {
+              color: #fff;
+              width: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/***********************************/
+/***********************************/
+// PAGE INDEX
+/***********************************/
+/***********************************/
+
+body {
+  font-family: 'Raleway', sans-serif;
+
+  >header {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+    >h1{
+      margin: 5px 0;}
   }
 
   // >nav{}
@@ -75,7 +210,7 @@ body {
         font-size: 1.3em;
       }
 
-      >a.btn-1 {
+      >a.btn-primary {
         background-color: $color-primary;
         color: #fff;
         text-decoration: none;
@@ -174,7 +309,9 @@ body {
             text-decoration: none;
             width: 100%;
 
-            >div.img-wrapper {position: relative;
+            >div.img-wrapper {
+              position: relative;
+
               >div.img-restaurant {
                 position: relative;
                 overflow: hidden;
@@ -273,12 +410,8 @@ body {
 
 @media all and (max-width:$mobile) {
   body {
-    font-family: 'Raleway', sans-serif;
 
-    >header {
-      display: flex;
-      justify-content: center;
-    }
+    >header {}
 
     >nav {}
 

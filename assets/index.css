@@ -325,13 +325,119 @@ ul {
 /***********************************/
 /***********************************/
 /***********************************/
+/***********************************/
+/***********************************/
+/***********************************/
+/***********************************/
 body {
   font-family: "Raleway", sans-serif;
 }
 body > header {
   display: flex;
   justify-content: center;
-  margin: 1.6rem 0 1rem 0;
+  margin-top: 15px;
+}
+body > header > h1 {
+  margin: 5px 0;
+}
+body > header > h1 > a {
+  text-decoration: none;
+  color: #000;
+}
+body > header > h1 > a > i {
+  font-size: 0.9em;
+}
+body > main > section.banner > div.banner-wrapper {
+  position: relative;
+}
+body > main > section.banner > div.banner-wrapper > img {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+body > main > section.banner > div.banner-wrapper > div.banner-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 0 0;
+  background-color: rgb(240, 240, 240);
+  border-radius: 30px 30px 0 0;
+}
+body > main > section.banner > div.banner-wrapper > div.banner-title > span.title {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+}
+body > main > section.banner > div.banner-wrapper > div.banner-title > span.title > h3 {
+  font-family: "Shrikhand", "cursive";
+  font-size: 1.5em;
+  margin: 0;
+}
+body > main > section.banner > div.banner-wrapper > div.banner-title > span.title > i {
+  font-size: 1.5em;
+  margin: 0;
+  padding-right: 10px;
+}
+body > main > section.meals {
+  margin: auto;
+  padding: 50px 0;
+  background-color: rgb(240, 240, 240);
+}
+body > main > section.meals > article {
+  width: 90%;
+  margin: 0 auto 30px;
+}
+body > main > section.meals > article > h2 {
+  text-transform: uppercase;
+}
+body > footer {
+  background-color: rgb(53, 53, 53);
+  color: #fff;
+  padding: 30px 0 40px;
+}
+body > footer > h4 {
+  font-family: "Shrikhand", "cursive";
+  font-size: 1.3rem;
+  margin: 0;
+  padding-left: 30px;
+}
+body > footer > div {
+  margin: 30px;
+  padding: 0;
+}
+body > footer > div > ul {
+  margin: 0;
+  padding: 0;
+}
+body > footer > div > ul > li {
+  list-style-type: none;
+  margin: 10px 0;
+}
+body > footer > div > ul > li > a {
+  text-decoration: none;
+  color: #fff;
+}
+body > footer > div > ul > li > a > i.fa-solid {
+  color: #fff;
+  width: 30px;
+}
+
+/***********************************/
+/***********************************/
+/***********************************/
+/***********************************/
+body {
+  font-family: "Raleway", sans-serif;
+}
+body > header {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+body > header > h1 {
+  margin: 5px 0;
 }
 body > main > section.location {
   display: flex;
@@ -366,7 +472,7 @@ body > main > section.description > p {
   margin: 10px 30px 20px 30px;
   font-size: 1.3em;
 }
-body > main > section.description > a.btn-1 {
+body > main > section.description > a.btn-primary {
   background-color: #9356DC;
   color: #fff;
   text-decoration: none;
@@ -529,16 +635,6 @@ body > footer > div > ul > li > a {
 body > footer > div > ul > li > a > i.fa-solid {
   color: #fff;
   width: 30px;
-}
-
-@media all and (max-width: 768px) {
-  body {
-    font-family: "Raleway", sans-serif;
-  }
-  body > header {
-    display: flex;
-    justify-content: center;
-  }
 }
 
 /*# sourceMappingURL=index.css.map */
