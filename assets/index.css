@@ -353,7 +353,9 @@ body > main > section.banner > div.banner-wrapper {
 body > main > section.banner > div.banner-wrapper > img {
   width: 100%;
   height: auto;
+  max-height: 450px;
   position: relative;
+  object-fit: cover;
 }
 body > main > section.banner > div.banner-wrapper > div.banner-title {
   position: absolute;
@@ -361,43 +363,125 @@ body > main > section.banner > div.banner-wrapper > div.banner-title {
   left: 0;
   right: 0;
   padding: 30px 0 0;
-  background-color: rgb(240, 240, 240);
-  border-radius: 30px 30px 0 0;
+  background-color: rgb(245, 245, 245);
+  border-radius: 40px 40px 0 0;
 }
 body > main > section.banner > div.banner-wrapper > div.banner-title > span.title {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  margin: auto;
+  margin: 5px auto;
 }
-body > main > section.banner > div.banner-wrapper > div.banner-title > span.title > h3 {
+body > main > section.banner > div.banner-wrapper > div.banner-title > span.title > h2 {
   font-family: "Shrikhand", "cursive";
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin: 0;
 }
 body > main > section.banner > div.banner-wrapper > div.banner-title > span.title > i {
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin: 0;
-  padding-right: 10px;
+  padding-right: 15px;
 }
 body > main > section.meals {
   margin: auto;
-  padding: 50px 0;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(245, 245, 245);
 }
 body > main > section.meals > article {
   width: 90%;
-  margin: 0 auto 30px;
+  margin: 0 auto;
 }
-body > main > section.meals > article > h2 {
+body > main > section.meals > article > h3 {
+  font-size: 1em;
+  font-weight: normal;
   text-transform: uppercase;
+  margin: 0;
+  padding: 30px 0 10px;
+}
+body > main > section.meals > article > ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body > main > section.meals > article > ul > a.meal-link {
+  text-decoration: none;
+  color: #000;
+}
+body > main > section.meals > article > ul > a.meal-link > li.meal-body {
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-txt {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-txt > h4.meal-name {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-txt > p.meal-components {
+  margin: 0;
+  font-size: 0.9em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-details {
+  display: flex;
+}
+body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-details > div.meal-price {
+  height: 100%;
+  display: flex;
+}
+body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-details > div.meal-price > p {
+  margin: 12px 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+  align-self: flex-end;
+}
+body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-details > div.meal-check {
+  height: 100%;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  display: none;
+}
+body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-details > div.meal-check > i {
+  color: #fff;
+  font-size: 1.2em;
+  margin: 12px 18px;
+  align-self: center;
+}
+body > main > section.meals > div.btn-primary-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+body > main > section.meals > div.btn-primary-wrapper > a.btn-primary {
+  background-color: #9356DC;
+  color: #fff;
+  text-decoration: none;
+  margin: 30px auto 50px;
+  padding: 15px 50px;
+  border-radius: 70px;
 }
 body > footer {
   background-color: rgb(53, 53, 53);
   color: #fff;
   padding: 30px 0 40px;
 }
-body > footer > h4 {
+body > footer > h5 {
   font-family: "Shrikhand", "cursive";
   font-size: 1.3rem;
   margin: 0;
@@ -462,7 +546,7 @@ body > main > section.description {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(245, 245, 245);
 }
 body > main > section.description > h1 {
   margin: 50px 50px 10px 50px;
@@ -519,7 +603,7 @@ body > main > section.stages > div.stage > div.btn-stage {
   height: 70px;
   display: flex;
   align-items: center;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(245, 245, 245);
   border-radius: 20px;
   box-shadow: 0px 3px 10px rgb(204, 203, 203);
 }
@@ -533,7 +617,7 @@ body > main > section.stages > div.stage > div.btn-stage > span.stage.txt {
   width: 275px;
 }
 body > main > section.restaurants {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(245, 245, 245);
   margin: auto;
   padding: 50px 0;
 }
@@ -610,7 +694,7 @@ body > footer {
   color: #fff;
   padding: 30px 0 40px;
 }
-body > footer > h4 {
+body > footer > h5 {
   font-family: "Shrikhand", "cursive";
   font-size: 1.3rem;
   margin: 0;

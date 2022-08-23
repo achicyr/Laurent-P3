@@ -8,7 +8,7 @@
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
-$grey-color:rgb(240, 240, 240);
+$grey-color:rgb(245, 245, 245);
 $police-logo_titles: 'Shrikhand', 'cursive';
 $police-txt: 'Roboto', 'sans-serif';
 
@@ -46,13 +46,13 @@ body {
     >section.banner{
     
       >div.banner-wrapper{
-        // width: 100%;
-        // max-height: 500px;
         position: relative;
         >img{
           width: 100%;
           height: auto;
+          max-height: 450px;
           position: relative;
+          object-fit: cover;
         }
         
         >div.banner-title {
@@ -62,24 +62,24 @@ body {
           right: 0;
           padding: 30px 0 0;
           background-color: $grey-color;
-          border-radius: 30px 30px 0 0;
+          border-radius: 40px 40px 0 0;
 
           >span.title {
             display: flex;
             justify-content: space-between;
             width: 90%;
-            margin: auto;
+            margin: 5px auto;
             
-            >h3{
+            >h2{
               font-family: $police-logo_titles;
-              font-size: 1.5em;
+              font-size: 1.6em;
               margin: 0;
             }
 
             >i{
-              font-size: 1.5em;
+              font-size: 1.6em;
               margin: 0;
-              padding-right: 10px;
+              padding-right: 15px;
             }
           }
         }
@@ -88,16 +88,118 @@ body {
 
     >section.meals{
       margin: auto;
-      padding: 50px 0;
+      // padding: 50px 0;
       background-color: $grey-color;
+      // display: flex;
+      // flex-direction: column;
+      // gap: 30px;
 
       >article{
-          width: 90%;
-          margin: 0 auto 30px;
+        width: 90%;
+        margin: 0 auto;
 
-          >h2{
-            text-transform: uppercase;
+        >h3{
+          font-size: 1em;
+          font-weight: normal;
+          text-transform: uppercase;
+          margin: 0;
+          padding: 30px 0 10px;
+        }
+
+        >ul{
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          >a.meal-link{
+            text-decoration: none;
+            color: #000;
+
+            >li.meal-body{
+              background-color: #fff;
+              border-radius: 15px;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+  
+              >span.meal-txt{
+                display: flex;
+                flex-direction: column;
+                margin: 12px 10px;
+                // width: 80%;
+                white-space: nowrap;
+                overflow: hidden;
+  
+                >h4.meal-name{
+                  margin: 0;
+                  margin-bottom: 5px;
+                  font-size: 1.1em;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                }
+  
+                >p.meal-components{
+                  margin: 0;
+                  font-size: 0.9em;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+  
+                }
+              }
+              >span.meal-details{
+                display: flex;
+  
+                >div.meal-price{
+                  height: 100%;
+                  display: flex;                  
+
+                  >p{
+                    margin: 12px 10px;
+                    font-size: 0.9em;
+                    font-weight: bold;
+                    align-self: flex-end;
+                  }
+                }
+                
+                >div.meal-check{
+                  height: 100%;
+                  background-color: $color-tertiary;
+                  border-radius: 0 15px 15px 0;
+                  display: flex;                  
+                  display: none;
+                  
+                  >i{
+                    color: #fff;
+                    font-size: 1.2em;
+                    margin: 12px 18px;
+                    align-self: center;
+                  }
+                }
+                  
+              }
+            }
           }
+        }
+      }
+
+
+      >div.btn-primary-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        >a.btn-primary {
+          background-color: $color-primary;
+          color: #fff;
+          text-decoration: none;
+          margin: 30px auto 50px;
+          padding: 15px 50px;
+          border-radius: 70px;
+        }
       }
     }
 
@@ -108,7 +210,7 @@ body {
     color: #fff;
     padding: 30px 0 40px;
 
-    >h4 {
+    >h5 {
       font-family: $police-logo_titles;
       font-size: 1.3rem;
       margin: 0;
@@ -373,7 +475,7 @@ body {
     color: #fff;
     padding: 30px 0 40px;
 
-    >h4 {
+    >h5 {
       font-family: $police-logo_titles;
       font-size: 1.3rem;
       margin: 0;
