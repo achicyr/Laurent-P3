@@ -333,19 +333,33 @@ body {
   font-family: "Raleway", sans-serif;
 }
 body > header {
-  display: flex;
-  justify-content: center;
   margin-top: 15px;
 }
-body > header > h1 {
-  margin: 5px 0;
+body > header > div.return-acceuil {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-body > header > h1 > a {
+body > header > div.return-acceuil > div.return-btn {
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+}
+body > header > div.return-acceuil > div.return-btn > a {
   text-decoration: none;
   color: #000;
 }
-body > header > h1 > a > i {
-  font-size: 0.9em;
+body > header > div.return-acceuil > div.return-btn > a > i {
+  font-size: 1.4em;
+}
+body > header > div.return-acceuil > h1 {
+  margin: 5px 0;
+}
+body > header > div.return-acceuil > h1 > img {
+  width: 150px;
 }
 body > main > section.banner > div.banner-wrapper {
   position: relative;
@@ -366,62 +380,118 @@ body > main > section.banner > div.banner-wrapper > div.banner-title {
   background-color: rgb(245, 245, 245);
   border-radius: 40px 40px 0 0;
 }
-body > main > section.banner > div.banner-wrapper > div.banner-title > span.title {
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title {
   display: flex;
   justify-content: space-between;
   width: 90%;
   margin: 5px auto;
 }
-body > main > section.banner > div.banner-wrapper > div.banner-title > span.title > h2 {
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > h2 {
   font-family: "Shrikhand", "cursive";
   font-size: 1.6em;
   margin: 0;
 }
-body > main > section.banner > div.banner-wrapper > div.banner-title > span.title > i {
-  font-size: 1.6em;
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation > a {
+  text-decoration: none;
+  color: #000;
+}
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation > a > i.heart-primary {
+  font-size: 1.5em;
   margin: 0;
   padding-right: 15px;
 }
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation > a > i.heart-secondary {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.5em;
+  margin: 0;
+  padding-right: 15px;
+  clip: rect(24px, 24px, 24px, 0px);
+  transition: clip 0.5s;
+}
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation > a > i.heart-secondary:hover i.heart-secondary, body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation > a > i.heart-secondary:focus i.heart-secondary {
+  clip: rect(0px, 24px, 24px, 0px);
+  color: #9356DC;
+}
 body > main > section.meals {
   margin: auto;
+  padding-top: 10px;
   background-color: rgb(245, 245, 245);
 }
 body > main > section.meals > article {
   width: 90%;
   margin: 0 auto;
 }
-body > main > section.meals > article > h3 {
+body > main > section.meals > article:nth-child(1) {
+  animation: fadein 2s;
+}
+body > main > section.meals > article:nth-child(2) {
+  animation: fadein 4s;
+}
+body > main > section.meals > article:nth-child(3) {
+  animation: fadein 6s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body > main > section.meals > article > h3.meal-categorie {
   font-size: 1em;
   font-weight: normal;
   text-transform: uppercase;
   margin: 0;
-  padding: 30px 0 10px;
+  padding: 20px 0 7px;
+}
+body > main > section.meals > article > div.underline-title {
+  background-color: #99E2D0;
+  width: 45px;
+  height: 4px;
+  margin-bottom: 15px;
 }
 body > main > section.meals > article > ul {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
-body > main > section.meals > article > ul > a.meal-link {
-  text-decoration: none;
-  color: #000;
-}
-body > main > section.meals > article > ul > a.meal-link > li.meal-body {
+body > main > section.meals > article > ul > li.meal-body {
   background-color: #fff;
   border-radius: 15px;
+  box-shadow: 0px 3px 10px rgb(204, 203, 203);
+}
+body > main > section.meals > article > ul > li.meal-body > a.meal-link {
+  text-decoration: none;
+  color: #000;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-txt {
+body > main > section.meals > article > ul > li.meal-body > a.meal-link:hover div.meal-check {
+  width: 60px !important;
+}
+body > main > section.meals > article > ul > li.meal-body > a.meal-link:hover div.meal-check i {
+  transform: rotate(360deg);
+}
+body > main > section.meals > article > ul > li.meal-body > a.meal-link > div.meal-txt {
   display: flex;
   flex-direction: column;
   margin: 12px 10px;
   white-space: nowrap;
   overflow: hidden;
 }
-body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-txt > h4.meal-name {
+body > main > section.meals > article > ul > li.meal-body > a.meal-link > div.meal-txt > h4.meal-name {
   margin: 0;
   margin-bottom: 5px;
   font-size: 1.1em;
@@ -429,38 +499,41 @@ body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.m
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-txt > p.meal-components {
+body > main > section.meals > article > ul > li.meal-body > a.meal-link > div.meal-txt > p.meal-components {
   margin: 0;
   font-size: 0.9em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-details {
+body > main > section.meals > article > ul > li.meal-body > a.meal-link > div.meal-details {
   display: flex;
 }
-body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-details > div.meal-price {
+body > main > section.meals > article > ul > li.meal-body > a.meal-link > div.meal-details > div.meal-price {
   height: 100%;
   display: flex;
 }
-body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-details > div.meal-price > p {
+body > main > section.meals > article > ul > li.meal-body > a.meal-link > div.meal-details > div.meal-price > p {
   margin: 12px 10px;
   font-size: 0.9em;
   font-weight: bold;
   align-self: flex-end;
 }
-body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-details > div.meal-check {
+body > main > section.meals > article > ul > li.meal-body > a.meal-link > div.meal-details > div.meal-check {
   height: 100%;
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
   display: flex;
-  display: none;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.5s;
 }
-body > main > section.meals > article > ul > a.meal-link > li.meal-body > span.meal-details > div.meal-check > i {
+body > main > section.meals > article > ul > li.meal-body > a.meal-link > div.meal-details > div.meal-check > i {
   color: #fff;
   font-size: 1.2em;
-  margin: 12px 18px;
+  margin: auto;
   align-self: center;
+  transition: all 0.5s;
 }
 body > main > section.meals > div.btn-primary-wrapper {
   display: flex;
@@ -475,11 +548,17 @@ body > main > section.meals > div.btn-primary-wrapper > a.btn-primary {
   margin: 30px auto 50px;
   padding: 15px 50px;
   border-radius: 70px;
+  box-shadow: 0px 3px 10px rgb(184, 182, 182);
+}
+body > main > section.meals > div.btn-primary-wrapper > a.btn-primary:hover {
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  box-shadow: 0px 5px 12px rgb(154, 153, 153);
+  transition: all 0.5s;
 }
 body > footer {
   background-color: rgb(53, 53, 53);
   color: #fff;
-  padding: 30px 0 40px;
+  padding: 30px 0 15px;
 }
 body > footer > h5 {
   font-family: "Shrikhand", "cursive";
@@ -488,7 +567,7 @@ body > footer > h5 {
   padding-left: 30px;
 }
 body > footer > div {
-  margin: 30px;
+  margin: 25px 30px;
   padding: 0;
 }
 body > footer > div > ul {
@@ -515,6 +594,27 @@ body > footer > div > ul > li > a > i.fa-solid {
 body {
   font-family: "Raleway", sans-serif;
 }
+body > div.loading {
+  background-color: #99E2D0;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 5px solid #9356DC;
+  border-radius: 50%;
+  border-top-color: #FF79DA;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
 body > header {
   display: flex;
   justify-content: center;
@@ -523,23 +623,40 @@ body > header {
 body > header > h1 {
   margin: 5px 0;
 }
+body > header > h1 > img {
+  width: 150px;
+}
 body > main > section.location {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   background-color: rgb(228, 228, 228);
   border-top: 1px solid #ddd;
   box-shadow: 0 2px 5px #999 inset;
 }
-body > main > section.location > div.location-txt {
+body > main > section.location > div.location-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body > main > section.location > div.location-wrapper > div.location-dot {
+  position: absolute;
+  width: calc(50% - 75px);
+  display: flex;
+  justify-content: flex-end;
+}
+body > main > section.location > div.location-wrapper > div.location-dot > i {
+  font-size: 1em;
+  color: rgb(69, 69, 69);
+}
+body > main > section.location > div.location-wrapper > div.location-txt {
   display: flex;
   justify-content: center;
   width: 100%;
   position: relative;
 }
-body > main > section.location > div.location-txt > p {
-  font-size: 1.1em;
+body > main > section.location > div.location-wrapper > div.location-txt > p {
+  font-size: 1em;
   font-weight: bold;
+  color: rgb(69, 69, 69);
 }
 body > main > section.description {
   display: flex;
@@ -548,27 +665,35 @@ body > main > section.description {
   text-align: center;
   background-color: rgb(245, 245, 245);
 }
-body > main > section.description > h1 {
+body > main > section.description > h2 {
   margin: 50px 50px 10px 50px;
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
 body > main > section.description > p {
-  margin: 10px 30px 20px 30px;
-  font-size: 1.3em;
+  margin: 10px 30px 35px 30px;
+  font-size: 1.2em;
+  color: rgb(69, 69, 69);
 }
 body > main > section.description > a.btn-primary {
   background-color: #9356DC;
   color: #fff;
   text-decoration: none;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   padding: 15px 25px;
   border-radius: 70px;
+  box-shadow: 0px 3px 10px rgb(184, 182, 182);
+}
+body > main > section.description > a.btn-primary:hover {
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  box-shadow: 0px 5px 12px rgb(154, 153, 153);
+  transition: all 0.5s;
 }
 body > main > section.stages {
   margin: auto;
   padding: 50px 0;
 }
-body > main > section.stages > h2 {
+body > main > section.stages > h3 {
+  font-size: 1.5em;
   width: 90%;
   margin: 0 auto 30px;
 }
@@ -576,6 +701,7 @@ body > main > section.stages > div.stage {
   width: 90%;
   margin: 0 auto;
   padding-left: 5%;
+  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -609,19 +735,20 @@ body > main > section.stages > div.stage > div.btn-stage {
 }
 body > main > section.stages > div.stage > div.btn-stage > i {
   color: rgb(109, 106, 106);
+  font-size: 1.2em;
   width: 40px;
   margin-left: 35px;
 }
-body > main > section.stages > div.stage > div.btn-stage > span.stage.txt {
-  text-align: center;
-  width: 275px;
+body > main > section.stages > div.stage > div.btn-stage p.stage-txt {
+  font-weight: bold;
 }
 body > main > section.restaurants {
   background-color: rgb(245, 245, 245);
   margin: auto;
   padding: 50px 0;
 }
-body > main > section.restaurants > h2 {
+body > main > section.restaurants > h3 {
+  font-size: 1.7em;
   width: 90%;
   margin: 0 auto 30px;
 }
@@ -636,7 +763,7 @@ body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-car
   width: 100%;
   border-radius: 20px;
   box-shadow: 0px 3px 10px rgb(204, 203, 203);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a {
   color: #000;
@@ -676,7 +803,7 @@ body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-car
   justify-content: space-between;
   margin: 10px;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > h3 {
+body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > h4 {
   margin: 5px 0;
 }
 body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > p {
@@ -692,7 +819,7 @@ body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-car
 body > footer {
   background-color: rgb(53, 53, 53);
   color: #fff;
-  padding: 30px 0 40px;
+  padding: 30px 0 15px;
 }
 body > footer > h5 {
   font-family: "Shrikhand", "cursive";
@@ -701,7 +828,7 @@ body > footer > h5 {
   padding-left: 30px;
 }
 body > footer > div {
-  margin: 30px;
+  margin: 25px 30px;
   padding: 0;
 }
 body > footer > div > ul {

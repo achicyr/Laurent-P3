@@ -23,20 +23,37 @@ body {
   font-family: 'Raleway', sans-serif;
 
   >header {
-    display: flex;
-    justify-content: center;
     margin-top: 15px;
 
-    >h1{
-      margin: 5px 0;
-      // position: absolute;
+    >div.return-acceuil{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-      >a{
-        // position: relative;
-        text-decoration: none;
-        color: #000;
+    >div.return-btn{
+      position: absolute;
+      left: 20px;
+      bottom: 15px;
 
-        >i{font-size: 0.9em;}
+        >a{
+          text-decoration: none;
+          color: #000;
+
+          >i{
+            font-size: 1.4em;
+          }
+        }
+      }
+
+      >h1{
+        margin: 5px 0;
+
+        >img{
+          width: 150px;
+        }
       }
     }
   }
@@ -47,6 +64,7 @@ body {
     
       >div.banner-wrapper{
         position: relative;
+
         >img{
           width: 100%;
           height: auto;
@@ -64,7 +82,7 @@ body {
           background-color: $grey-color;
           border-radius: 40px 40px 0 0;
 
-          >span.title {
+          >div.title {
             display: flex;
             justify-content: space-between;
             width: 90%;
@@ -76,11 +94,80 @@ body {
               margin: 0;
             }
 
-            >i{
-              font-size: 1.6em;
-              margin: 0;
-              padding-right: 15px;
-            }
+            >div.heart-animation{
+              position: relative;
+              width: 24px;
+              height: 24px;
+
+              >a{
+                text-decoration: none;
+                color: #000;
+
+                >i.heart-primary{
+                  font-size: 1.5em;
+                  margin: 0;
+                  padding-right: 15px;
+                  // position: relative;
+                  // width: 24px;
+                  // height: 24px;
+                }
+
+                >i.heart-secondary{
+                  position: absolute;
+                  top: 0; bottom: 0; left: 0; right: 0;
+                  // color: $color-primary;
+                  font-size: 1.5em;
+                  margin: 0;
+                  padding-right: 15px;
+                  clip: rect(24px,24px,24px,0px);
+                  transition: clip 0.5s;
+
+                  &:hover i.heart-secondary,
+                  &:focus i.heart-secondary {
+                    clip: rect(0px,24px,24px,0px);
+                    color: $color-primary;
+                  }
+                }
+              }
+
+
+
+            // >i.heart-primary{
+            //   font-size: 1.5em;
+            //   margin: 0;
+            //   padding-right: 15px;
+            //   position: relative;
+            //   width: 24px;
+            //   height: 24px;
+
+            //   >i.heart-secondary{
+            //     position: absolute;
+            //     color: $color-primary;
+            //     clip: rect(24px,24px,24px,0px);
+            //   }
+
+            //   // clip: rect(24px,24px,24px,0px);
+
+            //   // et au hover:
+            //   // clip: rect(0px,24px,24px,0px);
+
+            // cursor: pointer;
+
+            //   &:hover i.heart-primary{
+            //     clip: rect(24px,24px,24px,0px);
+            //     transition: clip 0.5s;
+
+            //     >i.heart-secondary{
+            //     color: $color-secondary;
+            //     clip: rect(0px,24px,24px,0px);
+            //     transition: clip 0.5s;
+
+            //     // color: linear-gradient(to bottom right, $color-secondary, $color-primary);
+            //        color: linear-gradient($color-primary, $color-secondary);
+            //     }
+            //   }
+            // }
+          }
           }
         }
       }
@@ -88,46 +175,77 @@ body {
 
     >section.meals{
       margin: auto;
-      // padding: 50px 0;
+      padding-top: 10px;
       background-color: $grey-color;
-      // display: flex;
-      // flex-direction: column;
-      // gap: 30px;
 
       >article{
         width: 90%;
         margin: 0 auto;
 
-        >h3{
+        &:nth-child(1){
+          animation: fadein 2s;
+        }
+        &:nth-child(2){
+          animation: fadein 4s;
+        }
+        &:nth-child(3){
+          animation: fadein 6s;
+        }
+
+        @keyframes fadein {
+          from {
+            opacity:0;
+          }
+          to {
+            opacity:1;
+          }
+        }
+
+        >h3.meal-categorie{
           font-size: 1em;
           font-weight: normal;
           text-transform: uppercase;
           margin: 0;
-          padding: 30px 0 10px;
+          padding: 20px 0 7px;
+        }
+
+        >div.underline-title{
+          background-color: $color-tertiary;
+          width: 45px;
+          height: 4px;
+          margin-bottom: 15px;
         }
 
         >ul{
           padding: 0;
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 15px;
 
-          >a.meal-link{
-            text-decoration: none;
-            color: #000;
+          >li.meal-body{
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0px 3px 10px rgb(204, 203, 203);
 
-            >li.meal-body{
-              background-color: #fff;
-              border-radius: 15px;
+            >a.meal-link{
+              text-decoration: none;
+              color: #000;
               display: flex;
               flex-direction: row;
               justify-content: space-between;
   
-              >span.meal-txt{
+              &:hover div.meal-check{
+                width: 60px !important;
+                
+                i{
+                  transform: rotate(360deg);
+                }
+              }
+  
+              >div.meal-txt{
                 display: flex;
                 flex-direction: column;
                 margin: 12px 10px;
-                // width: 80%;
                 white-space: nowrap;
                 overflow: hidden;
   
@@ -149,12 +267,12 @@ body {
   
                 }
               }
-              >span.meal-details{
+              >div.meal-details{
                 display: flex;
   
                 >div.meal-price{
                   height: 100%;
-                  display: flex;                  
+                  display: flex;                 
 
                   >p{
                     margin: 12px 10px;
@@ -169,13 +287,16 @@ body {
                   background-color: $color-tertiary;
                   border-radius: 0 15px 15px 0;
                   display: flex;                  
-                  display: none;
+                  width: 0;
+                  overflow: hidden;
+                  transition: all 0.5s;
                   
                   >i{
                     color: #fff;
                     font-size: 1.2em;
-                    margin: 12px 18px;
+                    margin: auto;
                     align-self: center;
+                    transition: all 0.5s;
                   }
                 }
                   
@@ -199,6 +320,13 @@ body {
           margin: 30px auto 50px;
           padding: 15px 50px;
           border-radius: 70px;
+          box-shadow: 0px 3px 10px rgb(184, 182, 182);
+
+          &:hover{
+            background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+            box-shadow: 0px 5px 12px rgb(154, 153, 153);
+            transition: all 0.5s;
+          }
         }
       }
     }
@@ -208,7 +336,7 @@ body {
   >footer {
     background-color: rgb(53, 53, 53);
     color: #fff;
-    padding: 30px 0 40px;
+    padding: 30px 0 15px;
 
     >h5 {
       font-family: $police-logo_titles;
@@ -218,7 +346,7 @@ body {
     }
 
     >div {
-      margin: 30px;
+      margin: 25px 30px;
       padding: 0;
 
       >ul {
@@ -253,44 +381,79 @@ body {
 body {
   font-family: 'Raleway', sans-serif;
 
+  >div.loading {
+    background-color: #99E2D0;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 5px solid #9356DC;
+    border-radius: 50%;
+    border-top-color: #FF79DA;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { -webkit-transform: rotate(360deg); }
+    }
+    @-webkit-keyframes spin {
+      to { -webkit-transform: rotate(360deg); }
+    }
+
+  // https://codepen.io/mandelid/pen/kNBYLJ?editors=1100
+
   >header {
     display: flex;
     justify-content: center;
     margin-top: 15px;
 
     >h1{
-      margin: 5px 0;}
+      margin: 5px 0;
+
+      >img{
+        width: 150px;
+      }
+    }
   }
 
   // >nav{}
   >main {
     >section.location {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+
       background-color: rgb(228, 228, 228);
       border-top: 1px solid #ddd;
       box-shadow: 0 2px 5px #999 inset;
 
-      // >div.location-dot {
-      //   position: relative;
-
-      //   >i {
-      //     position: absolute;
-      //     text-align: center;
-      //     margin: 50% 10px;
-      //   }
-      // }
-
-      >div.location-txt {
-        display: flex;
-        justify-content: center;
-        width: 100%;
+      >div.location-wrapper{
         position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
-        >p {
-          font-size: 1.1em;
-          font-weight: bold;
+        >div.location-dot {
+          position: absolute;
+          width: calc(50% - 75px);
+          display: flex;
+          justify-content: flex-end;
+          
+
+          >i {
+            font-size: 1em;
+            color: rgb(69, 69, 69);
+          }
+        }
+
+        >div.location-txt {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          position: relative;
+
+          >p {
+            font-size: 1em;
+            font-weight: bold;
+            color: rgb(69, 69, 69);
+          }
         }
       }
     }
@@ -302,23 +465,31 @@ body {
       text-align: center;
       background-color: $grey-color;
 
-      >h1 {
+      >h2 {
         margin: 50px 50px 10px 50px;
-        font-size: 1.8em;
+        font-size: 1.5em;
       }
 
       >p {
-        margin: 10px 30px 20px 30px;
-        font-size: 1.3em;
+        margin: 10px 30px 35px 30px;
+        font-size: 1.2em;
+        color: rgb(69, 69, 69);
       }
 
       >a.btn-primary {
         background-color: $color-primary;
         color: #fff;
         text-decoration: none;
-        margin-bottom: 80px;
+        margin-bottom: 60px;
         padding: 15px 25px;
         border-radius: 70px;
+        box-shadow: 0px 3px 10px rgb(184, 182, 182);
+
+        &:hover{
+          background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+          box-shadow: 0px 5px 12px rgb(154, 153, 153);
+          transition: all 0.5s;
+        }
       }
     }
 
@@ -326,7 +497,8 @@ body {
       margin: auto;
       padding: 50px 0;
 
-      >h2 {
+      >h3 {
+        font-size: 1.5em;
         width: 90%;
         margin: 0 auto 30px;
       }
@@ -335,7 +507,7 @@ body {
         width: 90%;
         margin: 0 auto;
         padding-left: 5%;
-        // margin: auto;
+        margin: auto;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -371,13 +543,13 @@ body {
 
           >i {
             color: rgb(109, 106, 106);
+            font-size: 1.2em;
             width: 40px;
             margin-left: 35px;
           }
 
-          >span.stage.txt {
-            text-align: center;
-            width: 275px;
+          p.stage-txt {
+            font-weight: bold;
           }
         }
       }
@@ -388,7 +560,8 @@ body {
       margin: auto;
       padding: 50px 0;
 
-      >h2 {
+      >h3 {
+        font-size: 1.7em;
         width: 90%;
         margin: 0 auto 30px;
       }
@@ -404,7 +577,7 @@ body {
           width: 100%;
           border-radius: 20px;
           box-shadow: 0px 3px 10px rgb(204, 203, 203);
-          margin-bottom: 20px;
+          margin-bottom: 25px;
 
           >a {
             color: #000;
@@ -451,7 +624,7 @@ body {
               margin: 10px;
 
               >div.restaurant-txt {
-                >h3{margin: 5px 0;}
+                >h4{margin: 5px 0;}
                 >p{margin: 5px 0;}
               }
 
@@ -473,7 +646,7 @@ body {
   >footer {
     background-color: rgb(53, 53, 53);
     color: #fff;
-    padding: 30px 0 40px;
+    padding: 30px 0 15px;
 
     >h5 {
       font-family: $police-logo_titles;
@@ -483,7 +656,7 @@ body {
     }
 
     >div {
-      margin: 30px;
+      margin: 25px 30px;
       padding: 0;
 
       >ul {
