@@ -94,7 +94,7 @@ body {
               margin: 0;
             }
 
-            >div.heart-animation{
+            div.heart-animation {
               position: relative;
               width: 24px;
               height: 24px;
@@ -103,70 +103,32 @@ body {
                 text-decoration: none;
                 color: #000;
 
-                >i.heart-primary{
+                i.heart-primary{
                   font-size: 1.5em;
                   margin: 0;
                   padding-right: 15px;
-                  // position: relative;
-                  // width: 24px;
-                  // height: 24px;
-                }
+                  position: relative;
+                  width: 24px;
+                  height: 24px;
 
-                >i.heart-secondary{
-                  position: absolute;
-                  top: 0; bottom: 0; left: 0; right: 0;
-                  // color: $color-primary;
-                  font-size: 1.5em;
-                  margin: 0;
-                  padding-right: 15px;
-                  clip: rect(24px,24px,24px,0px);
-                  transition: clip 0.5s;
-
-                  &:hover i.heart-secondary,
-                  &:focus i.heart-secondary {
+                  &:hover i.heart-secondary {
                     clip: rect(0px,24px,24px,0px);
-                    color: $color-primary;
+                    background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+                    background-clip: border-box;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                  }
+
+                  >i.heart-secondary{
+                    position: absolute;
+                    top: 0; bottom: 0; left: 0; right: 0;
+                    margin: 0;
+                    padding-right: 15px;
+                    clip: rect(24px,24px,24px,0px);
+                    transition: clip 1s;
                   }
                 }
               }
-
-
-
-            // >i.heart-primary{
-            //   font-size: 1.5em;
-            //   margin: 0;
-            //   padding-right: 15px;
-            //   position: relative;
-            //   width: 24px;
-            //   height: 24px;
-
-            //   >i.heart-secondary{
-            //     position: absolute;
-            //     color: $color-primary;
-            //     clip: rect(24px,24px,24px,0px);
-            //   }
-
-            //   // clip: rect(24px,24px,24px,0px);
-
-            //   // et au hover:
-            //   // clip: rect(0px,24px,24px,0px);
-
-            // cursor: pointer;
-
-            //   &:hover i.heart-primary{
-            //     clip: rect(24px,24px,24px,0px);
-            //     transition: clip 0.5s;
-
-            //     >i.heart-secondary{
-            //     color: $color-secondary;
-            //     clip: rect(0px,24px,24px,0px);
-            //     transition: clip 0.5s;
-
-            //     // color: linear-gradient(to bottom right, $color-secondary, $color-primary);
-            //        color: linear-gradient($color-primary, $color-secondary);
-            //     }
-            //   }
-            // }
           }
           }
         }
@@ -306,7 +268,6 @@ body {
         }
       }
 
-
       >div.btn-primary-wrapper{
         display: flex;
         flex-direction: column;
@@ -314,7 +275,7 @@ body {
         text-align: center;
 
         >a.btn-primary {
-          background-color: $color-primary;
+          background: linear-gradient(to bottom right, $color-secondary, $color-primary);
           color: #fff;
           text-decoration: none;
           margin: 30px auto 50px;
@@ -323,9 +284,9 @@ body {
           box-shadow: 0px 3px 10px rgb(184, 182, 182);
 
           &:hover{
-            background: linear-gradient(to bottom right, $color-secondary, $color-primary);
-            box-shadow: 0px 5px 12px rgb(154, 153, 153);
+            box-shadow: 0px 5px 12px rgb(128, 126, 126);
             transition: all 0.5s;
+            background: linear-gradient(to bottom right, $color-secondary, $color-secondary, $color-primary);
           }
         }
       }
@@ -381,28 +342,68 @@ body {
 body {
   font-family: 'Raleway', sans-serif;
 
-  >div.loading {
-    background-color: #99E2D0;
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    border: 5px solid #9356DC;
-    border-radius: 50%;
-    border-top-color: #FF79DA;
-    animation: spin 1s ease-in-out infinite;
-    -webkit-animation: spin 1s ease-in-out infinite;
-    }
-    
-    @keyframes spin {
-      to { -webkit-transform: rotate(360deg); }
-    }
-    @-webkit-keyframes spin {
-      to { -webkit-transform: rotate(360deg); }
+  >div.spinner-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background: #fff;
+    animation: slide 3s 1 forwards;
+
+    @keyframes slide {
+      from {
+        opacity: 1;
+        z-index: 100;
+      }
+      50%{
+        opacity: 1;
+      }
+      to   { 
+        opacity: 0;
+        z-index: -1;
+      }
     }
 
-  // https://codepen.io/mandelid/pen/kNBYLJ?editors=1100
+    &::before{
+      content: "";
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
 
-  >header {
+      >div.loading {
+        background-color: #99E2D0;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100px;
+        height: 100px;
+        border: 8px solid #9356DC;
+        border-radius: 50%;
+        border-top-color: #FF79DA;
+        animation: spin 1s ease-out infinite;
+        -webkit-animation: spin 1s ease-out infinite;
+        transition: all 1s;
+      }
+        
+      @-webkit-keyframes spin {
+        0% {
+            transform: rotate(0deg);
+            background: $color-primary;
+        }
+        50% {
+            transform: rotate(180deg);
+            background: $color-secondary;
+        }
+        100% {
+            transform: rotate(360deg);
+            background: $color-primary;
+        }
+      }
+    }
+
+  header {
     display: flex;
     justify-content: center;
     margin-top: 15px;
@@ -416,8 +417,7 @@ body {
     }
   }
 
-  // >nav{}
-  >main {
+  main {
     >section.location {
 
       background-color: rgb(228, 228, 228);
@@ -477,7 +477,7 @@ body {
       }
 
       >a.btn-primary {
-        background-color: $color-primary;
+        background: linear-gradient(to bottom right, $color-secondary, $color-primary);
         color: #fff;
         text-decoration: none;
         margin-bottom: 60px;
@@ -486,9 +486,9 @@ body {
         box-shadow: 0px 3px 10px rgb(184, 182, 182);
 
         &:hover{
-          background: linear-gradient(to bottom right, $color-secondary, $color-primary);
-          box-shadow: 0px 5px 12px rgb(154, 153, 153);
+          box-shadow: 0px 5px 12px rgb(128, 126, 126);
           transition: all 0.5s;
+          background: linear-gradient(to bottom right, $color-secondary, $color-secondary, $color-primary);
         }
       }
     }
@@ -628,12 +628,36 @@ body {
                 >p{margin: 5px 0;}
               }
 
-              >div.restaurant-icon {
+              >div.restaurant-heart {
                 display: flex;
                 align-items: center;
-                margin-right: 20px;
                 padding-bottom: 10px;
-                font-size: 1.5em;
+
+                i.heart-primary{
+                  font-size: 1.5em;
+                  margin: 0;
+                  padding-right: 15px;
+                  position: relative;
+                  width: 24px;
+                  height: 24px;
+
+                  &:hover i.heart-secondary {
+                    clip: rect(0px,24px,24px,0px);
+                    background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+                    background-clip: border-box;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                  }
+
+                  >i.heart-secondary{
+                    position: absolute;
+                    top: 0; bottom: 0; left: 0; right: 0;
+                    margin: 0;
+                    padding-right: 15px;
+                    clip: rect(24px,24px,24px,0px);
+                    transition: clip 1s;
+                  }
+                }
               }
 
             }
@@ -643,7 +667,7 @@ body {
     }
   }
 
-  >footer {
+  footer {
     background-color: rgb(53, 53, 53);
     color: #fff;
     padding: 30px 0 15px;

@@ -391,35 +391,40 @@ body > main > section.banner > div.banner-wrapper > div.banner-title > div.title
   font-size: 1.6em;
   margin: 0;
 }
-body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation {
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title div.heart-animation {
   position: relative;
   width: 24px;
   height: 24px;
 }
-body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation > a {
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title div.heart-animation > a {
   text-decoration: none;
   color: #000;
 }
-body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation > a > i.heart-primary {
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title div.heart-animation > a i.heart-primary {
   font-size: 1.5em;
   margin: 0;
   padding-right: 15px;
+  position: relative;
+  width: 24px;
+  height: 24px;
 }
-body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation > a > i.heart-secondary {
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title div.heart-animation > a i.heart-primary:hover i.heart-secondary {
+  clip: rect(0px, 24px, 24px, 0px);
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body > main > section.banner > div.banner-wrapper > div.banner-title > div.title div.heart-animation > a i.heart-primary > i.heart-secondary {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  font-size: 1.5em;
   margin: 0;
   padding-right: 15px;
   clip: rect(24px, 24px, 24px, 0px);
-  transition: clip 0.5s;
-}
-body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation > a > i.heart-secondary:hover i.heart-secondary, body > main > section.banner > div.banner-wrapper > div.banner-title > div.title > div.heart-animation > a > i.heart-secondary:focus i.heart-secondary {
-  clip: rect(0px, 24px, 24px, 0px);
-  color: #9356DC;
+  transition: clip 1s;
 }
 body > main > section.meals {
   margin: auto;
@@ -542,7 +547,7 @@ body > main > section.meals > div.btn-primary-wrapper {
   text-align: center;
 }
 body > main > section.meals > div.btn-primary-wrapper > a.btn-primary {
-  background-color: #9356DC;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   color: #fff;
   text-decoration: none;
   margin: 30px auto 50px;
@@ -551,9 +556,9 @@ body > main > section.meals > div.btn-primary-wrapper > a.btn-primary {
   box-shadow: 0px 3px 10px rgb(184, 182, 182);
 }
 body > main > section.meals > div.btn-primary-wrapper > a.btn-primary:hover {
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  box-shadow: 0px 5px 12px rgb(154, 153, 153);
+  box-shadow: 0px 5px 12px rgb(128, 126, 126);
   transition: all 0.5s;
+  background: linear-gradient(to bottom right, #FF79DA, #FF79DA, #9356DC);
 }
 body > footer {
   background-color: rgb(53, 53, 53);
@@ -594,88 +599,123 @@ body > footer > div > ul > li > a > i.fa-solid {
 body {
   font-family: "Raleway", sans-serif;
 }
-body > div.loading {
+body > div.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background: #fff;
+  animation: slide 3s 1 forwards;
+}
+@keyframes slide {
+  from {
+    opacity: 1;
+    z-index: 100;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+body > div.spinner-container::before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+body > div.spinner-container > div.loading {
   background-color: #99E2D0;
   display: inline-block;
+  vertical-align: middle;
   width: 100px;
   height: 100px;
-  border: 5px solid #9356DC;
+  border: 8px solid #9356DC;
   border-radius: 50%;
   border-top-color: #FF79DA;
-  animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1s ease-in-out infinite;
-}
-@keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
+  animation: spin 1s ease-out infinite;
+  -webkit-animation: spin 1s ease-out infinite;
+  transition: all 1s;
 }
 @-webkit-keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
+  0% {
+    transform: rotate(0deg);
+    background: #9356DC;
+  }
+  50% {
+    transform: rotate(180deg);
+    background: #FF79DA;
+  }
+  100% {
+    transform: rotate(360deg);
+    background: #9356DC;
   }
 }
-body > header {
+body header {
   display: flex;
   justify-content: center;
   margin-top: 15px;
 }
-body > header > h1 {
+body header > h1 {
   margin: 5px 0;
 }
-body > header > h1 > img {
+body header > h1 > img {
   width: 150px;
 }
-body > main > section.location {
+body main > section.location {
   background-color: rgb(228, 228, 228);
   border-top: 1px solid #ddd;
   box-shadow: 0 2px 5px #999 inset;
 }
-body > main > section.location > div.location-wrapper {
+body main > section.location > div.location-wrapper {
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-body > main > section.location > div.location-wrapper > div.location-dot {
+body main > section.location > div.location-wrapper > div.location-dot {
   position: absolute;
   width: calc(50% - 75px);
   display: flex;
   justify-content: flex-end;
 }
-body > main > section.location > div.location-wrapper > div.location-dot > i {
+body main > section.location > div.location-wrapper > div.location-dot > i {
   font-size: 1em;
   color: rgb(69, 69, 69);
 }
-body > main > section.location > div.location-wrapper > div.location-txt {
+body main > section.location > div.location-wrapper > div.location-txt {
   display: flex;
   justify-content: center;
   width: 100%;
   position: relative;
 }
-body > main > section.location > div.location-wrapper > div.location-txt > p {
+body main > section.location > div.location-wrapper > div.location-txt > p {
   font-size: 1em;
   font-weight: bold;
   color: rgb(69, 69, 69);
 }
-body > main > section.description {
+body main > section.description {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background-color: rgb(245, 245, 245);
 }
-body > main > section.description > h2 {
+body main > section.description > h2 {
   margin: 50px 50px 10px 50px;
   font-size: 1.5em;
 }
-body > main > section.description > p {
+body main > section.description > p {
   margin: 10px 30px 35px 30px;
   font-size: 1.2em;
   color: rgb(69, 69, 69);
 }
-body > main > section.description > a.btn-primary {
-  background-color: #9356DC;
+body main > section.description > a.btn-primary {
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   color: #fff;
   text-decoration: none;
   margin-bottom: 60px;
@@ -683,21 +723,21 @@ body > main > section.description > a.btn-primary {
   border-radius: 70px;
   box-shadow: 0px 3px 10px rgb(184, 182, 182);
 }
-body > main > section.description > a.btn-primary:hover {
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  box-shadow: 0px 5px 12px rgb(154, 153, 153);
+body main > section.description > a.btn-primary:hover {
+  box-shadow: 0px 5px 12px rgb(128, 126, 126);
   transition: all 0.5s;
+  background: linear-gradient(to bottom right, #FF79DA, #FF79DA, #9356DC);
 }
-body > main > section.stages {
+body main > section.stages {
   margin: auto;
   padding: 50px 0;
 }
-body > main > section.stages > h3 {
+body main > section.stages > h3 {
   font-size: 1.5em;
   width: 90%;
   margin: 0 auto 30px;
 }
-body > main > section.stages > div.stage {
+body main > section.stages > div.stage {
   width: 90%;
   margin: 0 auto;
   padding-left: 5%;
@@ -707,10 +747,10 @@ body > main > section.stages > div.stage {
   justify-content: center;
   margin-bottom: 25px;
 }
-body > main > section.stages > div.stage > div.nb-stage {
+body main > section.stages > div.stage > div.nb-stage {
   position: absolute;
 }
-body > main > section.stages > div.stage > div.nb-stage > p.stage-nb {
+body main > section.stages > div.stage > div.nb-stage > p.stage-nb {
   position: relative;
   top: 5px;
   right: 175px;
@@ -724,7 +764,7 @@ body > main > section.stages > div.stage > div.nb-stage > p.stage-nb {
   justify-content: center;
   line-height: 1.7em;
 }
-body > main > section.stages > div.stage > div.btn-stage {
+body main > section.stages > div.stage > div.btn-stage {
   width: 350px;
   height: 70px;
   display: flex;
@@ -733,30 +773,30 @@ body > main > section.stages > div.stage > div.btn-stage {
   border-radius: 20px;
   box-shadow: 0px 3px 10px rgb(204, 203, 203);
 }
-body > main > section.stages > div.stage > div.btn-stage > i {
+body main > section.stages > div.stage > div.btn-stage > i {
   color: rgb(109, 106, 106);
   font-size: 1.2em;
   width: 40px;
   margin-left: 35px;
 }
-body > main > section.stages > div.stage > div.btn-stage p.stage-txt {
+body main > section.stages > div.stage > div.btn-stage p.stage-txt {
   font-weight: bold;
 }
-body > main > section.restaurants {
+body main > section.restaurants {
   background-color: rgb(245, 245, 245);
   margin: auto;
   padding: 50px 0;
 }
-body > main > section.restaurants > h3 {
+body main > section.restaurants > h3 {
   font-size: 1.7em;
   width: 90%;
   margin: 0 auto 30px;
 }
-body > main > section.restaurants > div.restaurants-wrapper {
+body main > section.restaurants > div.restaurants-wrapper {
   width: 90%;
   margin: auto;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card {
   background-color: #fff;
   display: flex;
   flex-grow: 1;
@@ -765,21 +805,21 @@ body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-car
   box-shadow: 0px 3px 10px rgb(204, 203, 203);
   margin-bottom: 25px;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a {
   color: #000;
   text-decoration: none;
   width: 100%;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper {
   position: relative;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-restaurant {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-restaurant {
   position: relative;
   overflow: hidden;
   height: 200px;
   border-radius: 15px 15px 0 0;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-restaurant > img {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-restaurant > img {
   width: 101%;
   height: 101%;
   position: absolute;
@@ -788,7 +828,7 @@ body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-car
   transform: translate(-50%, -50%);
   object-fit: cover;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-content > p.new-restaurant {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-content > p.new-restaurant {
   position: absolute;
   top: 0;
   right: 15px;
@@ -797,53 +837,77 @@ body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-car
   padding: 5px 10px;
   border-radius: 3px;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 10px;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > h4 {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > h4 {
   margin: 5px 0;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > p {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > p {
   margin: 5px 0;
 }
-body > main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-icon {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-heart {
   display: flex;
   align-items: center;
-  margin-right: 20px;
   padding-bottom: 10px;
-  font-size: 1.5em;
 }
-body > footer {
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-heart i.heart-primary {
+  font-size: 1.5em;
+  margin: 0;
+  padding-right: 15px;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-heart i.heart-primary:hover i.heart-secondary {
+  clip: rect(0px, 24px, 24px, 0px);
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-heart i.heart-primary > i.heart-secondary {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding-right: 15px;
+  clip: rect(24px, 24px, 24px, 0px);
+  transition: clip 1s;
+}
+body footer {
   background-color: rgb(53, 53, 53);
   color: #fff;
   padding: 30px 0 15px;
 }
-body > footer > h5 {
+body footer > h5 {
   font-family: "Shrikhand", "cursive";
   font-size: 1.3rem;
   margin: 0;
   padding-left: 30px;
 }
-body > footer > div {
+body footer > div {
   margin: 25px 30px;
   padding: 0;
 }
-body > footer > div > ul {
+body footer > div > ul {
   margin: 0;
   padding: 0;
 }
-body > footer > div > ul > li {
+body footer > div > ul > li {
   list-style-type: none;
   margin: 10px 0;
 }
-body > footer > div > ul > li > a {
+body footer > div > ul > li > a {
   text-decoration: none;
   color: #fff;
 }
-body > footer > div > ul > li > a > i.fa-solid {
+body footer > div > ul > li > a > i.fa-solid {
   color: #fff;
   width: 30px;
 }
