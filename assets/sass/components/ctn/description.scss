@@ -1,0 +1,84 @@
+
+
+%description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &__titre {
+        margin: 50px 50px 10px 50px;
+        font-size: 1.5em;
+    }
+
+    &__txt {
+        margin: 10px 30px 35px 30px;
+        font-size: 1.2em;
+        color: rgb(69, 69, 69);
+        
+    }
+    &__btn {
+        background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 60px;
+        padding: 15px 25px;
+        border-radius: 70px;
+        box-shadow: 0px 3px 10px rgb(184, 182, 182);
+
+        &:hover{
+          box-shadow: 0px 5px 12px rgb(128, 126, 126);
+          transition: all 0.5s;
+          background: linear-gradient(to bottom right, $color-secondary, $color-secondary, $color-primary);
+        }
+        
+    }
+    //bgm
+}
+@mixin description(
+        $paramMixi: $description
+        , $bg: map-get($description, bg)
+    ){
+    @extend %description;
+    background-color: $bg;
+
+    &__titre {
+        @extend %description__titre;
+    }
+
+    &__txt {
+        @extend %description__txt;
+    }
+    &__btn {
+        @extend %description__btn;
+        &--primary {
+            color:red;
+        }
+    }
+}
+@function description($defaultValues){
+    
+    @return ($defaultValues);
+}
+//POUR DÉFINIR DES VALEURS PAR DÉFAUT VIA UNE FONCTION
+$description: description((
+    bg: $grey-color
+));
+//POUR DÉFINIR DES VALEURS PAR DÉFAUT EN DUR VIA UNE MAP
+//$description: ();
+/*************************************
+DÉFINIR ICI LES PROPRIÉTÉS DU BLOCK QUI POURRONT ÊTRE PARAMÉTRABLE
+EX: 
+box-shadow(color), background, border-color
+*************************************/
+.description{
+    @include description($bg:red);
+    //bge
+    //bgm
+}
+.descriptionYo{
+    @include description;
+    &__btn{
+        @extend .description__btn--primary
+    }
+}

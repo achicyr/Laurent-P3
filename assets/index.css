@@ -1,4 +1,10 @@
-/**/ /**/ /**/ /**/ /**/ /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@charset "UTF-8";
+/**/
+/**/
+/**/
+/**/
+/**/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -8,8 +14,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -44,9 +52,12 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /**
@@ -54,8 +65,10 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Text-level semantics
@@ -72,9 +85,12 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
 }
 
 /**
@@ -92,8 +108,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /**
@@ -143,10 +161,13 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
   /*    line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  margin: 0;
+  /* 2 */
 }
 
 /**
@@ -154,7 +175,8 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -163,7 +185,8 @@ input { /* 1 */
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -212,12 +235,18 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -240,8 +269,10 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -257,8 +288,10 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /**
@@ -273,8 +306,10 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /* Interactive
@@ -321,7 +356,381 @@ ul {
   font-family: "typography des contenus";
 }
 
-/**/ /**/ /**/
+/**/
+/**/
+.location__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.location__dot {
+  position: absolute;
+  width: calc(50% - 75px);
+  display: flex;
+  justify-content: flex-end;
+}
+.location__dot > i {
+  font-size: 1em;
+  color: rgb(69, 69, 69);
+}
+.location__txt {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+.location__txt > p {
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(69, 69, 69);
+}
+
+.location {
+  background-color: rgb(228, 228, 228);
+  border-top: 1px solid #ddd;
+  box-shadow: 0 2px 5px #999 inset;
+}
+.location__txt > p {
+  color: blue;
+}
+.location--red, .location :hover {
+  background: red;
+}
+.location--primary {
+  background: #9356DC;
+}
+.descriptionYo, .description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.descriptionYo__titre, .description__titre {
+  margin: 50px 50px 10px 50px;
+  font-size: 1.5em;
+}
+.descriptionYo__txt, .description__txt {
+  margin: 10px 30px 35px 30px;
+  font-size: 1.2em;
+  color: rgb(69, 69, 69);
+}
+.descriptionYo__btn, .description__btn {
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 60px;
+  padding: 15px 25px;
+  border-radius: 70px;
+  box-shadow: 0px 3px 10px rgb(184, 182, 182);
+}
+.descriptionYo__btn:hover, .description__btn:hover {
+  box-shadow: 0px 5px 12px rgb(128, 126, 126);
+  transition: all 0.5s;
+  background: linear-gradient(to bottom right, #FF79DA, #FF79DA, #9356DC);
+}
+
+/*************************************
+DÉFINIR ICI LES PROPRIÉTÉS DU BLOCK QUI POURRONT ÊTRE PARAMÉTRABLE
+EX: 
+box-shadow(color), background, border-color
+*************************************/
+.description {
+  background-color: red;
+}
+.description__btn--primary, .descriptionYo__btn {
+  color: red;
+}
+
+.descriptionYo {
+  background-color: rgb(245, 245, 245);
+}
+.descriptionYo__btn--primary {
+  color: red;
+}
+.stagesYo, .stages {
+  margin: auto;
+  padding: 50px 0;
+}
+.stagesYo__titre, .stages__titre {
+  font-size: 1.5em;
+  width: 90%;
+  margin: 0 auto 30px;
+}
+.stagesYo__item, .stages__item {
+  width: 90%;
+  margin: 0 auto;
+  padding-left: 5%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.stagesYo__itemNb, .stages__itemNb {
+  position: absolute;
+}
+.stagesYo__itemNb > p.stage-nb, .stages__itemNb > p.stage-nb {
+  position: relative;
+  top: 5px;
+  right: 175px;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  line-height: 1.7em;
+}
+.stagesYo__itemBtn, .stages__itemBtn {
+  display: flex;
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 0px 3px 10px rgb(204, 203, 203);
+  width: 350px;
+  height: 70px;
+}
+.stagesYo__itemBtn > i, .stages__itemBtn > i {
+  color: rgb(109, 106, 106);
+  font-size: 1.2em;
+  width: 40px;
+  margin-left: 35px;
+}
+.stagesYo__itemBtn p.stage-txt, .stages__itemBtn p.stage-txt {
+  font-weight: bold;
+}
+
+/*************************************
+VARIABLES PARAMÉTRABLE DU BLOC BEM
+EX: 
+bg_numero, background, border-color
+*************************************/
+.stages__itemNb > p {
+  background-color: #9356DC;
+}
+.stages__itemBtn {
+  border-radius: 20px;
+}
+
+.stagesYo__itemNb > p {
+  background-color: red;
+}
+.stagesYo__itemBtn {
+  border-radius: 70px;
+}
+
+/******PLACEHOLDER******/
+.restaurants, .restaurantsYo {
+  background-color: rgb(245, 245, 245);
+  margin: auto;
+  padding: 50px 0;
+}
+.restaurants__titre, .restaurantsYo__titre {
+  font-size: 1.7em;
+  width: 90%;
+  margin: 0 auto 30px;
+}
+.restaurants__wrapper, .restaurantsYo__wrapper {
+  width: 90%;
+  margin: auto;
+}
+.restaurants__wrapper > div, .restaurantsYo__wrapper > div {
+  background-color: #fff;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  box-shadow: 0px 3px 10px rgb(204, 203, 203);
+  margin-bottom: 25px;
+}
+.restaurants__card, .restaurantsYo__card {
+  color: #000;
+  text-decoration: none;
+  width: 100%;
+}
+.restaurants__cardImgWrapper, .restaurantsYo__cardImgWrapper {
+  position: relative;
+}
+.restaurants__cardImgWrapper > div.img-restaurant, .restaurantsYo__cardImgWrapper > div.img-restaurant {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  border-radius: 15px 15px 0 0;
+}
+.restaurants__cardImgWrapper > div.img-restaurant > img, .restaurantsYo__cardImgWrapper > div.img-restaurant > img {
+  width: 101%;
+  height: 101%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+.restaurants__cardImgWrapper > div.img-content > p.new-restaurant, .restaurantsYo__cardImgWrapper > div.img-content > p.new-restaurant {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 0.9em;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.restaurants__cardBody, .restaurantsYo__cardBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+.restaurants__cardBody > div.restaurant-txt > h4, .restaurantsYo__cardBody > div.restaurant-txt > h4 {
+  margin: 5px 0;
+}
+.restaurants__cardBody > div.restaurant-txt > p, .restaurantsYo__cardBody > div.restaurant-txt > p {
+  margin: 5px 0;
+}
+.restaurants__cardBody > div.restaurant-heart, .restaurantsYo__cardBody > div.restaurant-heart {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.restaurants__cardBody > div.restaurant-heart i.heart-primary, .restaurantsYo__cardBody > div.restaurant-heart i.heart-primary {
+  font-size: 1.5em;
+  margin: 0;
+  padding-right: 15px;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.restaurants__cardBody > div.restaurant-heart i.heart-primary:hover i.heart-secondary, .restaurantsYo__cardBody > div.restaurant-heart i.heart-primary:hover i.heart-secondary {
+  clip: rect(0px, 24px, 24px, 0px);
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.restaurants__cardBody > div.restaurant-heart i.heart-primary > i.heart-secondary, .restaurantsYo__cardBody > div.restaurant-heart i.heart-primary > i.heart-secondary {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding-right: 15px;
+  clip: rect(24px, 24px, 24px, 0px);
+  transition: clip 1s;
+}
+
+/******MIXIN******/
+/******FUNCTION******/
+/******VARAIBLES******/
+/*************************************
+VARIABLES PARAMÉTRABLE DU BLOC BEM
+EX: 
+box-shadow(color), background, border-color
+*************************************/
+/******BLOC BEM (extension)******/
+.restaurantsYo__wrapper > div {
+  border-radius: 70px;
+}
+.restaurantsYo__cardImgWrapper > div > p {
+  background-color: red;
+  color: gold;
+}
+.restaurantsYo__cardImgWrapper--new {
+  background-color: red;
+  color: red;
+}
+
+.restaurants__wrapper > div {
+  border-radius: 20px;
+}
+.restaurants__cardImgWrapper > div > p {
+  background-color: #99E2D0;
+  color: #10392f;
+}
+.restaurants__cardImgWrapper--new, .restaurants__cardImgWrapper:hover > div > p {
+  background-color: #99E2D0;
+  color: red;
+}
+/************************************************************/
+/**************************PLACEHOLDER**************************/
+/************************************************************/
+.spinnerContainerRED, .spinnerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  animation: slide 3s 1 forwards;
+}
+.spinnerContainerRED::before, .spinnerContainer::before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.spinnerContainerRED__loading, .spinnerContainer__loading {
+  background-color: #99E2D0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border: 8px solid #9356DC;
+  border-radius: 50%;
+  border-top-color: #FF79DA;
+  animation: spin 1s ease-out infinite;
+  -webkit-animation: spin 1s ease-out infinite;
+  transition: all 1s;
+}
+
+/************************************************************/
+/**************************MIXIN**************************/
+/************************************************************/
+/************************************************************/
+/**************************FUNCTION**************************/
+/************************************************************/
+/******VARAIBLES******/
+/*************************************
+VARIABLES PARAMÉTRABLE DU BLOC BEM
+EX: 
+box-shadow(color), background, border-color
+*************************************/
+/************************************************************/
+/**************************BLOC BEM (extension)**************************/
+/************************************************************/
+.spinnerContainer {
+  background: gray;
+}
+.spinnerContainerRED {
+  background: red;
+}
+@keyframes slide {
+  from {
+    opacity: 1;
+    z-index: 100;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    background: #9356DC;
+  }
+  50% {
+    transform: rotate(180deg);
+    background: #FF79DA;
+  }
+  100% {
+    transform: rotate(360deg);
+    background: #9356DC;
+  }
+}
+/**/
 /***********************************/
 /***********************************/
 /***********************************/
@@ -598,62 +1007,68 @@ body > footer > div > ul > li > a > i.fa-solid {
 /***********************************/
 body {
   font-family: "Raleway", sans-serif;
-}
-body > div.spinner-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  background: #fff;
-  animation: slide 3s 1 forwards;
-}
-@keyframes slide {
-  from {
-    opacity: 1;
-    z-index: 100;
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-body > div.spinner-container::before {
-  content: "";
-  height: 100%;
-  display: inline-block;
-  vertical-align: middle;
-}
-body > div.spinner-container > div.loading {
-  background-color: #99E2D0;
-  display: inline-block;
-  vertical-align: middle;
-  width: 100px;
-  height: 100px;
-  border: 8px solid #9356DC;
-  border-radius: 50%;
-  border-top-color: #FF79DA;
-  animation: spin 1s ease-out infinite;
-  -webkit-animation: spin 1s ease-out infinite;
-  transition: all 1s;
-}
-@-webkit-keyframes spin {
-  0% {
-    transform: rotate(0deg);
-    background: #9356DC;
-  }
-  50% {
-    transform: rotate(180deg);
-    background: #FF79DA;
-  }
-  100% {
-    transform: rotate(360deg);
-    background: #9356DC;
-  }
+  /*
+  >div.spinner-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background: #fff;
+    animation: slide 3s 1 forwards;
+
+    @keyframes slide {
+      from {
+        opacity: 1;
+        z-index: 100;
+      }
+      50%{
+        opacity: 1;
+      }
+      to   { 
+        opacity: 0;
+        z-index: -1;
+      }
+    }
+
+    &::before{
+      content: "";
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+      >div.loading {
+        background-color: #99E2D0;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100px;
+        height: 100px;
+        border: 8px solid #9356DC;
+        border-radius: 50%;
+        border-top-color: #FF79DA;
+        animation: spin 1s ease-out infinite;
+        -webkit-animation: spin 1s ease-out infinite;
+        transition: all 1s;
+      }
+
+      @-webkit-keyframes spin {
+        0% {
+            transform: rotate(0deg);
+            background: $color-primary;
+        }
+        50% {
+            transform: rotate(180deg);
+            background: $color-secondary;
+        }
+        100% {
+            transform: rotate(360deg);
+            background: $color-primary;
+        }
+      }
+    }
+    */
 }
 body header {
   display: flex;
@@ -666,219 +1081,259 @@ body header > h1 {
 body header > h1 > img {
   width: 150px;
 }
-body main > section.location {
-  background-color: rgb(228, 228, 228);
-  border-top: 1px solid #ddd;
-  box-shadow: 0 2px 5px #999 inset;
-}
-body main > section.location > div.location-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-body main > section.location > div.location-wrapper > div.location-dot {
-  position: absolute;
-  width: calc(50% - 75px);
-  display: flex;
-  justify-content: flex-end;
-}
-body main > section.location > div.location-wrapper > div.location-dot > i {
-  font-size: 1em;
-  color: rgb(69, 69, 69);
-}
-body main > section.location > div.location-wrapper > div.location-txt {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  position: relative;
-}
-body main > section.location > div.location-wrapper > div.location-txt > p {
-  font-size: 1em;
-  font-weight: bold;
-  color: rgb(69, 69, 69);
-}
-body main > section.description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: rgb(245, 245, 245);
-}
-body main > section.description > h2 {
-  margin: 50px 50px 10px 50px;
-  font-size: 1.5em;
-}
-body main > section.description > p {
-  margin: 10px 30px 35px 30px;
-  font-size: 1.2em;
-  color: rgb(69, 69, 69);
-}
-body main > section.description > a.btn-primary {
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  color: #fff;
-  text-decoration: none;
-  margin-bottom: 60px;
-  padding: 15px 25px;
-  border-radius: 70px;
-  box-shadow: 0px 3px 10px rgb(184, 182, 182);
-}
-body main > section.description > a.btn-primary:hover {
-  box-shadow: 0px 5px 12px rgb(128, 126, 126);
-  transition: all 0.5s;
-  background: linear-gradient(to bottom right, #FF79DA, #FF79DA, #9356DC);
-}
-body main > section.stages {
-  margin: auto;
-  padding: 50px 0;
-}
-body main > section.stages > h3 {
-  font-size: 1.5em;
-  width: 90%;
-  margin: 0 auto 30px;
-}
-body main > section.stages > div.stage {
-  width: 90%;
-  margin: 0 auto;
-  padding-left: 5%;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 25px;
-}
-body main > section.stages > div.stage > div.nb-stage {
-  position: absolute;
-}
-body main > section.stages > div.stage > div.nb-stage > p.stage-nb {
-  position: relative;
-  top: 5px;
-  right: 175px;
-  background-color: #9356DC;
-  color: #fff;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
-  line-height: 1.7em;
-}
-body main > section.stages > div.stage > div.btn-stage {
-  width: 350px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  background-color: rgb(245, 245, 245);
-  border-radius: 20px;
-  box-shadow: 0px 3px 10px rgb(204, 203, 203);
-}
-body main > section.stages > div.stage > div.btn-stage > i {
-  color: rgb(109, 106, 106);
-  font-size: 1.2em;
-  width: 40px;
-  margin-left: 35px;
-}
-body main > section.stages > div.stage > div.btn-stage p.stage-txt {
-  font-weight: bold;
-}
-body main > section.restaurants {
-  background-color: rgb(245, 245, 245);
-  margin: auto;
-  padding: 50px 0;
-}
-body main > section.restaurants > h3 {
-  font-size: 1.7em;
-  width: 90%;
-  margin: 0 auto 30px;
-}
-body main > section.restaurants > div.restaurants-wrapper {
-  width: 90%;
-  margin: auto;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card {
-  background-color: #fff;
-  display: flex;
-  flex-grow: 1;
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0px 3px 10px rgb(204, 203, 203);
-  margin-bottom: 25px;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a {
-  color: #000;
-  text-decoration: none;
-  width: 100%;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper {
-  position: relative;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-restaurant {
-  position: relative;
-  overflow: hidden;
-  height: 200px;
-  border-radius: 15px 15px 0 0;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-restaurant > img {
-  width: 101%;
-  height: 101%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.img-wrapper > div.img-content > p.new-restaurant {
-  position: absolute;
-  top: 0;
-  right: 15px;
-  background-color: #99E2D0;
-  font-size: 0.9em;
-  padding: 5px 10px;
-  border-radius: 3px;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 10px;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > h4 {
-  margin: 5px 0;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-txt > p {
-  margin: 5px 0;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-heart {
-  display: flex;
-  align-items: center;
-  padding-bottom: 10px;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-heart i.heart-primary {
-  font-size: 1.5em;
-  margin: 0;
-  padding-right: 15px;
-  position: relative;
-  width: 24px;
-  height: 24px;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-heart i.heart-primary:hover i.heart-secondary {
-  clip: rect(0px, 24px, 24px, 0px);
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-body main > section.restaurants > div.restaurants-wrapper > div.restaurant-card > a > div.restaurant-body > div.restaurant-heart i.heart-primary > i.heart-secondary {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding-right: 15px;
-  clip: rect(24px, 24px, 24px, 0px);
-  transition: clip 1s;
+body main {
+  /*
+  >section.location {
+
+    background-color: rgb(228, 228, 228);
+    border-top: 1px solid #ddd;
+    box-shadow: 0 2px 5px #999 inset;
+
+    >div.location-wrapper{
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      >div.location-dot {
+        position: absolute;
+        width: calc(50% - 75px);
+        display: flex;
+        justify-content: flex-end;
+
+
+        >i {
+          font-size: 1em;
+          color: rgb(69, 69, 69);
+        }
+      }
+
+      >div.location-txt {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+
+        >p {
+          font-size: 1em;
+          font-weight: bold;
+          color: rgb(69, 69, 69);
+        }
+      }
+    }
+  }
+  */
+  /*
+  >section.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: $grey-color;
+
+    >h2 {
+      margin: 50px 50px 10px 50px;
+      font-size: 1.5em;
+    }
+
+    >p {
+      margin: 10px 30px 35px 30px;
+      font-size: 1.2em;
+      color: rgb(69, 69, 69);
+    }
+
+    >a.btn-primary {
+      background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 60px;
+      padding: 15px 25px;
+      border-radius: 70px;
+      box-shadow: 0px 3px 10px rgb(184, 182, 182);
+
+      &:hover{
+        box-shadow: 0px 5px 12px rgb(128, 126, 126);
+        transition: all 0.5s;
+        background: linear-gradient(to bottom right, $color-secondary, $color-secondary, $color-primary);
+      }
+    }
+  }
+  */
+  /*
+  >section.stages {
+    margin: auto;
+    padding: 50px 0;
+
+    >h3 {
+      font-size: 1.5em;
+      width: 90%;
+      margin: 0 auto 30px;
+    }
+
+    >div.stage {
+      width: 90%;
+      margin: 0 auto;
+      padding-left: 5%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 25px;
+
+      >div.nb-stage{
+        position: absolute;
+
+        >p.stage-nb {
+          position: relative;
+          top: 5px;
+          right: 175px;
+          background-color: $color-primary;
+          color: #fff;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          font-size: 1em;
+          display: flex;
+          justify-content: center;
+          line-height: 1.7em;
+        }
+      }
+
+      >div.btn-stage {
+        width: 350px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        background-color: $grey-color;
+        border-radius: 20px;
+        box-shadow: 0px 3px 10px rgb(204, 203, 203);
+
+        >i {
+          color: rgb(109, 106, 106);
+          font-size: 1.2em;
+          width: 40px;
+          margin-left: 35px;
+        }
+
+        p.stage-txt {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  */
+  /*
+  >section.restaurants {
+    background-color: $grey-color;
+    margin: auto;
+    padding: 50px 0;
+
+    >h3 {
+      font-size: 1.7em;
+      width: 90%;
+      margin: 0 auto 30px;
+    }
+
+    >div.restaurants-wrapper {
+      width: 90%;
+      margin: auto;
+
+      >div.restaurant-card {
+        background-color: #fff;
+        display: flex;
+        flex-grow: 1;
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0px 3px 10px rgb(204, 203, 203);
+        margin-bottom: 25px;
+
+        >a {
+          color: #000;
+          text-decoration: none;
+          width: 100%;
+
+          >div.img-wrapper {
+            position: relative;
+
+            >div.img-restaurant {
+              position: relative;
+              overflow: hidden;
+              height: 200px;
+              border-radius: 15px 15px 0 0;
+
+              >img {
+                width: 101%;
+                height: 101%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                object-fit: cover;
+              }
+            }
+
+            >div.img-content {
+              >p.new-restaurant {
+                position: absolute;
+                top: 0;
+                right: 15px;
+                background-color: $color-tertiary;
+                font-size: 0.9em;
+                padding: 5px 10px;
+                border-radius: 3px;
+              }
+            }
+          }
+
+          >div.restaurant-body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px;
+
+            >div.restaurant-txt {
+              >h4{margin: 5px 0;}
+              >p{margin: 5px 0;}
+            }
+
+            >div.restaurant-heart {
+              display: flex;
+              align-items: center;
+              padding-bottom: 10px;
+
+              i.heart-primary{
+                font-size: 1.5em;
+                margin: 0;
+                padding-right: 15px;
+                position: relative;
+                width: 24px;
+                height: 24px;
+
+                &:hover i.heart-secondary {
+                  clip: rect(0px,24px,24px,0px);
+                  background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+                  background-clip: border-box;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                }
+
+                >i.heart-secondary{
+                  position: absolute;
+                  top: 0; bottom: 0; left: 0; right: 0;
+                  margin: 0;
+                  padding-right: 15px;
+                  clip: rect(24px,24px,24px,0px);
+                  transition: clip 1s;
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+  */
 }
 body footer {
   background-color: rgb(53, 53, 53);

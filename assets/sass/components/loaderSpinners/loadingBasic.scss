@@ -1,0 +1,132 @@
+
+
+
+/************************************************************/
+/**************************PLACEHOLDER**************************/
+/************************************************************/
+%spinnerContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    animation: slide 3s 1 forwards;
+
+    &::before {
+        content: "";
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__loading {
+        background-color: #99E2D0;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100px;
+        height: 100px;
+        border: 8px solid #9356DC;
+        border-radius: 50%;
+        border-top-color: #FF79DA;
+        animation: spin 1s ease-out infinite;
+        -webkit-animation: spin 1s ease-out infinite;
+        transition: all 1s;
+        
+    }
+
+    //bgee
+    //bgm
+}
+
+/************************************************************/
+/**************************MIXIN**************************/
+/************************************************************/
+@mixin spinnerContainer(
+        $paramMixi: $spinnerContainer
+        , $bg: map-get($spinnerContainer, bg)
+        // BEMMixinParam
+    ){
+    @extend %spinnerContainer;
+    background: $bg;
+
+    &__loading {
+        @extend %spinnerContainer__loading;
+    }
+
+    //bgee
+    //bgm
+}
+
+/************************************************************/
+/**************************FUNCTION**************************/
+/************************************************************/
+@function spinnerContainer($defaultValues){
+    
+    @return ($defaultValues);
+}
+
+/******VARAIBLES******/
+//POUR DÉFINIR DES VALEURS PAR DÉFAUT VIA UNE FONCTION
+$spinnerContainer: spinnerContainer((
+    bg: lighten(black,50%)
+));
+//POUR DÉFINIR DES VALEURS PAR DÉFAUT EN DUR VIA UNE MAP
+//SI DÉCOMMENTÉ, ÉCRASERA LA FUNCTION SI-DESSUS
+//$spinnerContainer: ();
+
+/*************************************
+VARIABLES PARAMÉTRABLE DU BLOC BEM
+EX: 
+box-shadow(color), background, border-color
+*************************************/
+
+/************************************************************/
+/**************************BLOC BEM (extension)**************************/
+/************************************************************/
+.spinnerContainer{
+    @include spinnerContainer();
+    //bge
+    //bgm
+}
+.spinnerContainerRED{
+    @include spinnerContainer($bg:red);
+}
+
+
+
+
+@keyframes slide {
+    from {
+        opacity: 1;
+        z-index: 100;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+@-webkit-keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        background: $color-primary;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        background: $color-secondary;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background: $color-primary;
+    }
+}
+
+
+

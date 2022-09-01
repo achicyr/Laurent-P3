@@ -5,12 +5,6 @@
 /***********************************/
 /***********************************/
 
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-$grey-color:rgb(245, 245, 245);
-$police-logo_titles: 'Shrikhand', 'cursive';
-$police-txt: 'Roboto', 'sans-serif';
 
 
 /***********************************/
@@ -342,6 +336,10 @@ body {
 body {
   font-family: 'Raleway', sans-serif;
 
+
+  
+  
+  /*
   >div.spinner-container{
     position: fixed;
     top: 0;
@@ -402,6 +400,7 @@ body {
         }
       }
     }
+    */
 
   header {
     display: flex;
@@ -417,7 +416,11 @@ body {
     }
   }
 
+
+
+
   main {
+    /*
     >section.location {
 
       background-color: rgb(228, 228, 228);
@@ -457,7 +460,11 @@ body {
         }
       }
     }
+    */
+    
 
+
+    /*
     >section.description {
       display: flex;
       flex-direction: column;
@@ -492,7 +499,9 @@ body {
         }
       }
     }
+    */
 
+    /*
     >section.stages {
       margin: auto;
       padding: 50px 0;
@@ -554,7 +563,11 @@ body {
         }
       }
     }
+    */
 
+
+    
+    /*
     >section.restaurants {
       background-color: $grey-color;
       margin: auto;
@@ -665,6 +678,7 @@ body {
         }
       }
     }
+    */
   }
 
   footer {

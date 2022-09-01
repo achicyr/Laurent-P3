@@ -1,0 +1,115 @@
+
+
+
+%stages{
+  margin: auto;
+  padding: 50px 0;
+
+  &__titre {
+    font-size: 1.5em;
+    width: 90%;
+    margin: 0 auto 30px;
+    
+  }
+
+  &__item {
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 5%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 25px;
+    
+  }
+  &__itemNb {
+    position: absolute;
+    >p.stage-nb {
+      position: relative;
+      top: 5px;
+      right: 175px;
+      color: #fff;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      font-size: 1em;
+      display: flex;
+      justify-content: center;
+      line-height: 1.7em;
+    }
+  }
+  &__itemBtn {
+    display: flex;
+    align-items: center;
+    background-color: $grey-color;
+    box-shadow: 0px 3px 10px rgb(204, 203, 203);
+    width: 350px;
+    height: 70px;
+
+    >i {
+      color: rgb(109, 106, 106);
+      font-size: 1.2em;
+      width: 40px;
+      margin-left: 35px;
+    }
+
+    p.stage-txt {
+      font-weight: bold;
+    }
+
+  }
+  //bgm
+}
+@mixin stages(
+    $paramMixi: $stages
+    , $br: map-get($stages, br)
+    , $bg_numero: map-get($stages, bg_numero)
+    // BEMMixinParam
+  ){
+  @extend %stages;
+
+  &__titre {
+    @extend %stages__titre;
+  }
+
+  &__item {
+    @extend %stages__item;
+    &Nb {
+      @extend %stages__itemNb;
+      >p{background-color: $bg_numero;}
+    }
+    &Btn {
+      @extend %stages__itemBtn;
+      border-radius: $br;
+    }
+  }
+  //bgm
+}
+@function stages($defaultValues){
+  
+  @return ($defaultValues);
+}
+//POUR DÉFINIR DES VALEURS PAR DÉFAUT VIA UNE FONCTION
+$stages: stages((
+  br: 20px
+  , bg_numero: $color-primary
+));
+//POUR DÉFINIR DES VALEURS PAR DÉFAUT EN DUR VIA UNE MAP
+//$stages: ();
+
+/*************************************
+VARIABLES PARAMÉTRABLE DU BLOC BEM
+EX: 
+bg_numero, background, border-color
+*************************************/
+.stages{
+  @include stages();
+  //bge
+  //bgm
+}
+
+
+.stagesYo{
+  @include stages($br:70px, $bg_numero: red);
+}

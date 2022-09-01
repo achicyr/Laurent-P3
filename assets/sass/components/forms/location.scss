@@ -1,0 +1,84 @@
+
+%location{
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+    }
+
+    &__dot {
+        position: absolute;
+        width: calc(50% - 75px);
+        display: flex;
+        justify-content: flex-end;
+        
+  
+        >i {
+          font-size: 1em;
+          color: rgb(69, 69, 69);
+        }
+        
+    }
+    &__txt {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+  
+        >p {
+          font-size: 1em;
+          font-weight: bold;
+          color: rgb(69, 69, 69);
+        }
+    }
+    //bgm
+}
+@mixin location(
+        $paramMixi: $location
+        , $bs: map-get($location, bs)
+        , $bg: map-get($location, bg)
+        , $bc: map-get($location, bc)
+        , $txtc: map-get($location, txtc)
+    ){
+    @extend %location;
+    background-color: $bg;
+    border-top: 1px solid $bc;
+    box-shadow: $bs;
+
+    &__wrapper {
+        @extend %location__wrapper;
+    }
+
+    &__dot {
+        @extend %location__dot;
+    }
+    &__txt {
+        @extend %location__txt;
+        >p {
+            color: $txtc;
+        }
+    }
+    &--red {
+        background:red;
+    }
+    &--primary {
+        background:$color-primary;
+    }
+}
+@function location(){
+    
+    @return (bs:0 2px 5px #999 inset, bc:#ddd, bg:rgb(228, 228, 228));
+}
+$location: location();
+.location{
+    @include location($txtc:blue);
+    //bge
+    //bgm
+    :hover{@extend .location--red;}
+}
+
+
+

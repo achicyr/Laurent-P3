@@ -1,0 +1,190 @@
+
+
+/******PLACEHOLDER******/
+%restaurants{
+    background-color: $grey-color;
+    margin: auto;
+    padding: 50px 0;
+
+    &__titre {
+        font-size: 1.7em;
+        width: 90%;
+        margin: 0 auto 30px;
+        
+    }
+
+    &__wrapper {
+        width: 90%;
+        margin: auto;
+
+        >div {
+          background-color: #fff;
+          display: flex;
+          flex-grow: 1;
+          width: 100%;
+          box-shadow: 0px 3px 10px rgb(204, 203, 203);
+          margin-bottom: 25px;
+
+        }
+    }
+    &__card {
+        color: #000;
+        text-decoration: none;
+        width: 100%;
+        
+        &ImgWrapper {
+            position: relative;
+  
+            >div.img-restaurant {
+              position: relative;
+              overflow: hidden;
+              height: 200px;
+              border-radius: 15px 15px 0 0;
+  
+              >img {
+                width: 101%;
+                height: 101%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                object-fit: cover;
+              }
+            }
+  
+            >div.img-content {
+              >p.new-restaurant {
+                position: absolute;
+                top: 0;
+                right: 15px;
+                font-size: 0.9em;
+                padding: 5px 10px;
+                border-radius: 3px;
+              }
+            }
+        }
+
+        &Body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px;
+  
+            >div.restaurant-txt {
+              >h4{margin: 5px 0;}
+              >p{margin: 5px 0;}
+            }
+  
+            >div.restaurant-heart {
+              display: flex;
+              align-items: center;
+              padding-bottom: 10px;
+  
+              i.heart-primary{
+                font-size: 1.5em;
+                margin: 0;
+                padding-right: 15px;
+                position: relative;
+                width: 24px;
+                height: 24px;
+  
+                &:hover i.heart-secondary {
+                  clip: rect(0px,24px,24px,0px);
+                  background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+                  background-clip: border-box;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                }
+  
+                >i.heart-secondary{
+                  position: absolute;
+                  top: 0; bottom: 0; left: 0; right: 0;
+                  margin: 0;
+                  padding-right: 15px;
+                  clip: rect(24px,24px,24px,0px);
+                  transition: clip 1s;
+                }
+              }
+            }
+        }
+    }
+    //bgm
+}
+
+/******MIXIN******/
+@mixin restaurants(
+        $paramMixi: $restaurants
+        , $br: map-get($restaurants, br)
+        , $bg_new: map-get($restaurants, bg_new)
+        , $color_new: map-get($restaurants, color_new)
+    ){
+    @extend %restaurants;
+
+    &__titre {
+        @extend %restaurants__titre;
+    }
+
+    &__wrapper {
+        @extend %restaurants__wrapper;
+        >div{
+          border-radius: $br;
+        }
+    }
+    &__card {
+        @extend %restaurants__card;
+        &Body {
+            @extend %restaurants__cardBody;
+        }
+        &ImgWrapper {
+            @extend %restaurants__cardImgWrapper;
+            >div>p{
+                background-color: $bg_new;
+                color: $color_new;
+            }
+            &--new{
+                background-color: $bg_new;
+                color: red;
+            }
+        }
+    }
+    //bgm
+}
+
+/******FUNCTION******/
+@function restaurants($defaultValues){
+    
+    @return ($defaultValues);
+}
+
+/******VARAIBLES******/
+//POUR DÉFINIR DES VALEURS PAR DÉFAUT VIA UNE FONCTION
+$restaurants: restaurants((
+    br: 20px
+    , bg_new: $color-tertiary
+    , color_new: darken($color-tertiary,60%)
+));
+//POUR DÉFINIR DES VALEURS PAR DÉFAUT EN DUR VIA UNE MAP
+//SI DÉCOMMENTÉ, ÉCRASERA LA FUNCTION SI-DESSUS
+//$restaurants: ();
+
+/*************************************
+VARIABLES PARAMÉTRABLE DU BLOC BEM
+EX: 
+box-shadow(color), background, border-color
+*************************************/
+
+/******BLOC BEM (extension)******/
+.restaurantsYo{
+    @include restaurants($br:70px,$bg_new:red,$color_new:gold)
+}
+.restaurants{
+    @include restaurants();
+    //bge
+    //bgm
+    &__cardImgWrapper:hover>div>p{
+        @extend .restaurants__cardImgWrapper--new;
+    }
+}
+
+
+
